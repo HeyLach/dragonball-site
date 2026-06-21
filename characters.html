@@ -17,11 +17,14 @@
   }
   .filter-btn:hover,.filter-btn.active { background:var(--orange);color:white; }
 
-  .char-img-wrap img { display:none; }
-  .char-avatar-emoji {
-    font-size:5rem;
-    filter:drop-shadow(2px 4px 8px rgba(0,0,0,0.2));
+  .char-img-wrap img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:8px;
   }
+  .char-avatar-emoji { display:none; }
 </style>
 </head>
 <body>
@@ -74,7 +77,7 @@
 
     <div class="char-card" data-type="hero saiyan">
       <div class="char-img-wrap bg-goku">
-        <span class="char-avatar-emoji">🌟</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/b/ba/Goku_anime_profile.png/revision/latest?cb=20250723190513" alt="孫悟空">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Son Gokū / 孫悟空 / カカロット</div>
@@ -92,7 +95,7 @@
 
     <div class="char-card" data-type="hero villain saiyan">
       <div class="char-img-wrap bg-vegeta">
-        <span class="char-avatar-emoji">👑</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/9/94/Vegeta_anime_profile.png/revision/latest?cb=20250723190507" alt="貝吉塔">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Vegeta / ベジータ 王子</div>
@@ -110,7 +113,7 @@
 
     <div class="char-card" data-type="hero saiyan">
       <div class="char-img-wrap bg-gohan">
-        <span class="char-avatar-emoji">📚</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/3/3b/Gohan_anime_profile_3.png/revision/latest?cb=20250617191059" alt="孫悟飯">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Son Gohan / 孫悟飯</div>
@@ -128,7 +131,7 @@
 
     <div class="char-card" data-type="hero namek">
       <div class="char-img-wrap bg-piccolo">
-        <span class="char-avatar-emoji">💚</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/b/b7/Super_Hero_-_Piccolo_artwork_3.png/revision/latest?cb=20250923210449" alt="比克">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Piccolo / ピッコロ</div>
@@ -146,7 +149,7 @@
 
     <div class="char-card" data-type="hero human">
       <div class="char-img-wrap bg-krillin">
-        <span class="char-avatar-emoji">🥋</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/5/54/Krillin_DB_Episode_134.png/revision/latest?cb=20241210001054" alt="克林">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Kuririn / クリリン</div>
@@ -164,7 +167,7 @@
 
     <div class="char-card" data-type="hero human">
       <div class="char-img-wrap bg-bulma">
-        <span class="char-avatar-emoji">🔬</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/a/a6/Bulma_anime_profile.png/revision/latest?cb=20250617190824" alt="布瑪">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Bulma / ブルマ</div>
@@ -182,7 +185,7 @@
 
     <div class="char-card" data-type="hero saiyan">
       <div class="char-img-wrap bg-trunks">
-        <span class="char-avatar-emoji">🗡️</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/4/4f/Future_Trunks_DBZ_Episode_131.png/revision/latest?cb=20241206021927" alt="未來特南克斯">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Trunks / トランクス（未来）</div>
@@ -199,7 +202,7 @@
 
     <div class="char-card" data-type="hero human">
       <div class="char-img-wrap bg-chichi">
-        <span class="char-avatar-emoji">👩</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/e/e2/Chi-Chi_DBZ_Ep_04_001.png/revision/latest?cb=20201226004235" alt="麒麟">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Chi-Chi / チチ</div>
@@ -222,7 +225,7 @@
 
     <div class="char-card" data-type="villain">
       <div class="char-img-wrap bg-frieza">
-        <span class="char-avatar-emoji">👹</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/e/ee/DBS_Broly_Frieza_Render.png/revision/latest?cb=20221019232854" alt="弗利沙">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Freeza / フリーザ</div>
@@ -240,7 +243,7 @@
 
     <div class="char-card" data-type="villain">
       <div class="char-img-wrap bg-cell">
-        <span class="char-avatar-emoji">🧬</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/e/ed/Cell_Dragon_Ball_Z_Episode_177.png/revision/latest?cb=20241206024341" alt="賽魯">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Cell / セル</div>
@@ -258,7 +261,7 @@
 
     <div class="char-card" data-type="villain">
       <div class="char-img-wrap bg-buu">
-        <span class="char-avatar-emoji">🌸</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/4/4a/All_Majin_Buu_forms_%28Daiz4%29.jpg/revision/latest?cb=20130605020823" alt="魔人布歐">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Majin Bū / 魔人ブウ</div>
@@ -276,7 +279,7 @@
 
     <div class="char-card" data-type="villain hero">
       <div class="char-img-wrap bg-android" style="background:linear-gradient(160deg,#c0d8f0,#5588aa);">
-        <span class="char-avatar-emoji">🤖</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/e/e6/Android_18_anime_profile.png/revision/latest?cb=20250617190842" alt="18號">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Android 18 / 人造人18号</div>
@@ -299,7 +302,7 @@
 
     <div class="char-card" data-type="god">
       <div class="char-img-wrap bg-beerus">
-        <span class="char-avatar-emoji">😼</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/7/7d/BeerusWikia_%283%29.jpg/revision/latest?cb=20240224003806" alt="比魯斯">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Beerus / ビルス</div>
@@ -317,7 +320,7 @@
 
     <div class="char-card" data-type="god">
       <div class="char-img-wrap bg-whis">
-        <span class="char-avatar-emoji">🪄</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/d/da/WhisU7.png/revision/latest?cb=20170629161500" alt="維斯">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Whis / ウイス</div>
@@ -335,7 +338,7 @@
 
     <div class="char-card" data-type="god">
       <div class="char-img-wrap" style="background:linear-gradient(160deg,#fffbe8,#FFD700);">
-        <span class="char-avatar-emoji">👁️</span>
+        <img src="https://static.wikia.nocookie.net/dragonball/images/c/c1/Zeno.png/revision/latest?cb=20170805000223" alt="全王">
       </div>
       <div class="char-body">
         <div class="char-name-jp">Zen-Oh / 全王</div>

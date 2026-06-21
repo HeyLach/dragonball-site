@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電玩專區 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .game-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+    gap:22px;margin-bottom:40px;
+  }
+  .game-card {
+    background:white;border-radius:14px;overflow:hidden;
+    box-shadow:0 4px 18px var(--shadow);
+    transition:transform 0.2s,box-shadow 0.2s;
+    display:flex;flex-direction:column;
+  }
+  .game-card:hover { transform:translateY(-4px);box-shadow:0 10px 28px var(--shadow-deep); }
+  .game-cover {
+    height:90px;display:flex;align-items:center;justify-content:center;
+    font-size:3.2rem;position:relative;
+  }
+  .game-body { padding:16px;flex:1; }
+  .game-platform { font-size:0.72rem;font-weight:800;color:var(--orange);margin-bottom:4px;letter-spacing:0.02em; }
+  .game-body h3 {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:1rem;font-weight:800;color:var(--text);margin-bottom:6px;line-height:1.3;
+  }
+  .game-body p { font-size:0.84rem;color:var(--text-mid);line-height:1.62; }
+  .game-meta { display:flex;gap:6px;flex-wrap:wrap;margin-top:10px; }
+  .game-year { font-size:0.72rem;color:var(--text-light);font-weight:700;margin-top:4px; }
+
+  .era-label {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:1rem;font-weight:800;
+    color:white;background:var(--orange-dark);
+    padding:8px 20px;border-radius:8px;
+    margin-bottom:18px;margin-top:8px;
+    display:inline-block;
+  }
+
+  .featured-card {
+    border:2px solid var(--orange);
+    position:relative;
+  }
+  .featured-card::before {
+    content:'⭐ 推薦';
+    position:absolute;top:8px;right:8px;
+    background:var(--orange);color:white;
+    font-size:0.65rem;font-weight:800;
+    padding:2px 8px;border-radius:10px;
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    z-index:1;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html" class="active">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a0800,#B84400 55%,#FF6600);">
+  <div style="font-size:2.5rem;margin-bottom:10px">🎮</div>
+  <h1>電玩專區</h1>
+  <p>從1986年FC到2024年Sparking! Zero——七龍珠四十年電玩戰鬥史</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">🎮 電玩專區</span>
+  </div>
+
+  <div class="highlight-box">
+    <p>🎮 七龍珠電玩自1986年在Famicom登場以來，已有超過 <strong>80款以上</strong> 遊戲橫跨各大平台。格鬥遊戲是主要類型，但也有RPG、跑酷、卡牌等多元形式。Bandai Namco是目前七龍珠遊戲的主要發行商。</p>
+  </div>
+
+  <!-- ── MODERN MUST-PLAYS ── -->
+  <h2 class="section-title">🏆 現代必玩大作</h2>
+  <div class="game-grid">
+
+    <div class="game-card featured-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#1a0800,#440000)">⚡</div>
+      <div class="game-body">
+        <div class="game-platform">PS5 / PS4 / XBox / PC / Switch</div>
+        <h3>Dragon Ball: Sparking! ZERO</h3>
+        <div class="game-year">2024年10月發售</div>
+        <p>Budokai Tenkaichi系列睽違17年正統續作，含超過180位可操作角色。進化的360度空中戰鬥系統、自訂劇情創作模式（Episode Battle）、全面升級的線上對戰。系列最多角色數量，Sparking！Zero打破過去所有七龍珠電玩首週銷售紀錄。</p>
+        <div class="game-meta">
+          <span class="badge badge-orange">2024新作</span>
+          <span class="badge badge-gold">180+角色</span>
+          <span class="badge badge-blue">線上對戰</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card featured-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#0a0020,#220055)">🎨</div>
+      <div class="game-body">
+        <div class="game-platform">PS4 / XBox One / PC / Switch</div>
+        <h3>Dragon Ball FighterZ</h3>
+        <div class="game-year">2018年1月發售</div>
+        <p>由Arc System Works（罪惡裝備、蒼翼默示錄開發商）打造的2.5D格鬥遊戲，以驚人的手繪風格3D畫面震驚業界。3v3團隊對戰系統、流暢的連擊設計，成為電競格鬥賽事常客。至今仍被視為七龍珠電玩的巔峰藝術品。</p>
+        <div class="game-meta">
+          <span class="badge badge-orange">電競格鬥</span>
+          <span class="badge badge-gold">極致畫面</span>
+          <span class="badge badge-blue">Arc Works製作</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card featured-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#001a00,#003300)">🐉</div>
+      <div class="game-body">
+        <div class="game-platform">PS4 / XBox One / PC / Switch</div>
+        <h3>Dragon Ball Z: Kakarot</h3>
+        <div class="game-year">2020年1月發售（日版2020年）</div>
+        <p>以悟空（卡卡羅特）視角重現整個DBZ劇情的動作RPG。涵蓋賽亞人篇到布歐篇，後續DLC加入「神與神」「復活的F」「宇宙生存大賽」篇章。可自由探索地圖、釣魚、煮飯，以RPG形式深度體驗DBZ世界。</p>
+        <div class="game-meta">
+          <span class="badge badge-green">動作RPG</span>
+          <span class="badge badge-orange">全DBZ劇情</span>
+          <span class="badge badge-gold">DLC豐富</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card featured-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#1a0a00,#664400)">⏳</div>
+      <div class="game-body">
+        <div class="game-platform">PS4 / XBox One / PC / Switch</div>
+        <h3>Dragon Ball Xenoverse 2</h3>
+        <div class="game-year">2016年11月發售</div>
+        <p>玩家可自訂賽亞人、那美克星人、弗利沙族等種族的「時空巡邏隊員」，穿越時間修正被改變的DBZ歷史。線上合作模式讓多位玩家在「時空管理局」城市互動。自發售以來持續更新DLC，累計全球銷售超過1000萬套。</p>
+        <div class="game-meta">
+          <span class="badge badge-blue">自訂角色</span>
+          <span class="badge badge-orange">1000萬套</span>
+          <span class="badge badge-green">持續更新</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── BUDOKAI SERIES ── -->
+  <div class="era-label">⚔️ Budokai 系列（2002–2005）</div>
+  <div class="game-grid">
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#1a0000,#550000)">🥊</div>
+      <div class="game-body">
+        <div class="game-platform">PS2 / GameCube</div>
+        <h3>Dragon Ball Z: Budokai 1</h3>
+        <div class="game-year">2002年11月（日）</div>
+        <p>Dimps開發的現代3D格鬥先驅，首次以流暢3D對戰呈現DBZ戰鬥，涵蓋賽亞人篇到Cell篇故事模式。日式格鬥遊戲UI與氣消耗系統奠定後續系列基礎。</p>
+        <div class="game-meta"><span class="badge badge-orange">系列開山之作</span></div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#001133,#003388)">🌀</div>
+      <div class="game-body">
+        <div class="game-platform">PS2 / GameCube</div>
+        <h3>Dragon Ball Z: Budokai 3</h3>
+        <div class="game-year">2004年11月（日）</div>
+        <p>Budokai系列最高完成度的作品，加入Dragon Universe模式（世界地圖探索）、更多角色與劇情、Dragon Rush反擊系統。粉絲至今仍視為Budokai系列最佳作。</p>
+        <div class="game-meta"><span class="badge badge-gold">系列最佳</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TENKAICHI SERIES ── -->
+  <div class="era-label">🌀 Budokai Tenkaichi 系列（2005–2007）</div>
+  <div class="game-grid">
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#0a1a00,#226600)">🌏</div>
+      <div class="game-body">
+        <div class="game-platform">PS2 / Wii</div>
+        <h3>Dragon Ball Z: Budokai Tenkaichi 2</h3>
+        <div class="game-year">2006年（日）</div>
+        <p>天下第一武道大會系列中最受歡迎的一作，引入超過150位可操作角色，覆蓋DB、DBZ、GT所有時期。360度空中格鬥讓玩家感受原著中那種宏觀宇宙決戰的爽快感。</p>
+        <div class="game-meta">
+          <span class="badge badge-orange">150+角色</span>
+          <span class="badge badge-gold">粉絲最愛</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#330000,#880000)">🔥</div>
+      <div class="game-body">
+        <div class="game-platform">PS2 / Wii</div>
+        <h3>Dragon Ball Z: Budokai Tenkaichi 3</h3>
+        <div class="game-year">2007年（日）</div>
+        <p>系列最終作，可操作角色超過162位，是當時七龍珠電玩史上最多角色的作品。Wii版支援體感搖桿進行氣功波等招式，加入線上對戰。後來Sparking! Zero的精神續作。</p>
+        <div class="game-meta">
+          <span class="badge badge-orange">162位角色</span>
+          <span class="badge badge-blue">線上對戰</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── MOBILE ── -->
+  <div class="era-label">📱 手機遊戲</div>
+  <div class="game-grid">
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#001833,#004499)">📱</div>
+      <div class="game-body">
+        <div class="game-platform">iOS / Android</div>
+        <h3>Dragon Ball Legends</h3>
+        <div class="game-year">2018年5月發售</div>
+        <p>Bandai Namco出品的手機格鬥卡牌遊戲。特色是原創角色「Shallot」，3D實時對戰，劇情由鳥山明監修。持續推出新活動和角色，是七龍珠手機遊戲中服務時間最長、最活躍的作品。</p>
+        <div class="game-meta">
+          <span class="badge badge-blue">手機格鬥</span>
+          <span class="badge badge-orange">原創角色</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#1a0000,#660000)">🃏</div>
+      <div class="game-body">
+        <div class="game-platform">iOS / Android</div>
+        <h3>Dragon Ball Z Dokkan Battle</h3>
+        <div class="game-year">2015年1月（日）</div>
+        <p>益智彈珠+卡牌RPG形式，玩家收集各時期的角色卡牌進行戰鬥。在全球收穫龐大玩家群，多次創下七龍珠手遊最高收益紀錄。以「覺醒」機制和豐富的全球協作活動維持長久熱度。</p>
+        <div class="game-meta">
+          <span class="badge badge-orange">益智卡牌</span>
+          <span class="badge badge-green">超長壽命</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── OTHER NOTABLE ── -->
+  <div class="era-label">🎯 其他經典作品</div>
+  <div class="game-grid">
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#0a0a30,#222288)">🏃</div>
+      <div class="game-body">
+        <div class="game-platform">PS4 / XBox One / PC</div>
+        <h3>Dragon Ball: The Breakers</h3>
+        <div class="game-year">2022年10月</div>
+        <p>非對稱多人生存遊戲——1人扮演強大反派（賽魯、布歐、弗利沙等），7人扮演普通市民逃脫。全新的七龍珠遊戲玩法，打破格鬥為主的慣例，在獨特的恐慌逃脫體驗中獲得特定粉絲群。</p>
+        <div class="game-meta">
+          <span class="badge badge-purple">不對稱對戰</span>
+          <span class="badge badge-green">8人多人</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#1a0a00,#553300)">🌟</div>
+      <div class="game-body">
+        <div class="game-platform">Arcade / PS4</div>
+        <h3>Super Dragon Ball Heroes</h3>
+        <div class="game-year">2010年起（日本街機）</div>
+        <p>日本限定街機卡牌遊戲，以「自訂卡組+節奏戰鬥」為核心。引入大量非正史超強角色與型態（如超藍進化、UI全型等），並製作了配合的促銷動畫。是日本街機文化與七龍珠收集文化結合的獨特存在。</p>
+        <div class="game-meta">
+          <span class="badge badge-grey">日本限定街機</span>
+          <span class="badge badge-orange">非正史設定</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <div class="game-cover" style="background:linear-gradient(135deg,#004400,#117700)">🐉</div>
+      <div class="game-body">
+        <div class="game-platform">Famicom / Famicom Disk</div>
+        <h3>龍王伝説・ドラゴンボール シリーズ（FC）</h3>
+        <div class="game-year">1986–1989年</div>
+        <p>七龍珠最早期的FC/FDS系列遊戲，包含《龍王伝説》《大魔王復活》《神龍の謎》等數作，以簡單的動作或角色扮演形式還原原著故事。雖然遊戲性受時代限制，但作為系列起點具有重要歷史意義。</p>
+        <div class="game-meta">
+          <span class="badge badge-grey">FC懷舊</span>
+          <span class="badge badge-orange">系列起點</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight-box gold">
+    <p>💡 <strong>想從哪裡開始？</strong><br>
+    格鬥愛好者：<strong>Dragon Ball FighterZ</strong>（競技深度）或 <strong>Sparking! ZERO</strong>（角色最多）<br>
+    故事體驗：<strong>Dragon Ball Z: Kakarot</strong>（完整DBZ劇情RPG）<br>
+    複數人同樂：<strong>Sparking! ZERO</strong>（本地對戰+線上）<br>
+    手機隨時玩：<strong>Dragon Ball Legends</strong>（3D格鬥手遊）</p>
+  </div>
+
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+</body>
+</html>

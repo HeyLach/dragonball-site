@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登場人物 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .filter-bar {
+    display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;justify-content:center;
+  }
+  .filter-btn {
+    padding:6px 16px;border-radius:20px;border:2px solid var(--orange);
+    background:white;color:var(--orange-dark);cursor:pointer;font-weight:700;
+    font-size:0.82rem;font-family:inherit;transition:all 0.2s;
+  }
+  .filter-btn:hover,.filter-btn.active { background:var(--orange);color:white; }
+
+  .char-img-wrap img { display:none; }
+  .char-avatar-emoji {
+    font-size:5rem;
+    filter:drop-shadow(2px 4px 8px rgba(0,0,0,0.2));
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html" class="active">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a0800,#B84400 60%,#FF6600);">
+  <div style="font-size:2.5rem;margin-bottom:10px">👥</div>
+  <h1>登場人物</h1>
+  <p>英雄、反派、神明與天使——七龍珠宇宙中最重要的角色介紹</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">👥 登場人物</span>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterChar('all',this)">全部</button>
+    <button class="filter-btn" onclick="filterChar('hero',this)">英雄</button>
+    <button class="filter-btn" onclick="filterChar('villain',this)">反派</button>
+    <button class="filter-btn" onclick="filterChar('god',this)">神明</button>
+    <button class="filter-btn" onclick="filterChar('saiyan',this)">賽亞人</button>
+    <button class="filter-btn" onclick="filterChar('human',this)">地球人</button>
+    <button class="filter-btn" onclick="filterChar('namek',this)">那美克星人</button>
+  </div>
+
+  <!-- ── MAIN HEROES ── -->
+  <h2 class="section-title">⚡ 主要英雄</h2>
+  <div class="char-grid">
+
+    <div class="char-card" data-type="hero saiyan">
+      <div class="char-img-wrap bg-goku">
+        <span class="char-avatar-emoji">🌟</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Son Gokū / 孫悟空 / カカロット</div>
+        <h3>孫悟空</h3>
+        <span class="char-role" style="background:var(--orange)">主角・賽亞人</span>
+        <p class="char-desc">賽亞人卡卡羅特，嬰兒時期被送往地球，成為保護地球的最強戰士。天生戰鬥本能與善良天性並存，是七龍珠宇宙中多次超越極限的存在。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">賽亞人（地球長大）</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">野澤雅子（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">最強型態</span><span class="char-fact-val">極意之境 兆</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">元氣彈、龜派氣功</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="hero villain saiyan">
+      <div class="char-img-wrap bg-vegeta">
+        <span class="char-avatar-emoji">👑</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Vegeta / ベジータ 王子</div>
+        <h3>貝吉塔</h3>
+        <span class="char-role" style="background:#4455aa">賽亞人王子</span>
+        <p class="char-desc">第9780號宇宙賽亞人的王子，驕傲且好勝。最初作為反派登場，後來成為地球的守護者，與悟空的競爭促使彼此不斷超越。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">賽亞人（純血）</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">堀川仁（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">最強型態</span><span class="char-fact-val">超藍進化・自我極致</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">火力全開、大爆炸攻擊</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="hero saiyan">
+      <div class="char-img-wrap bg-gohan">
+        <span class="char-avatar-emoji">📚</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Son Gohan / 孫悟飯</div>
+        <h3>孫悟飯</h3>
+        <span class="char-role" style="background:#448844">悟空之子・混血</span>
+        <p class="char-desc">悟空與其妻麒麟（Chi-Chi）的長子，學者氣質卻擁有超越父親的潛力。Cell篇以超賽2擊敗賽魯，是系列中最具代表性的成長角色。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">賽亞人/地球人混血</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">野澤雅子（幼）/林 洋子（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">最強型態</span><span class="char-fact-val">野獸悟飯（Beast Gohan）</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">父子龜波氣功、特殊光束砲</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="hero namek">
+      <div class="char-img-wrap bg-piccolo">
+        <span class="char-avatar-emoji">💚</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Piccolo / ピッコロ</div>
+        <h3>比克（畢卡羅）</h3>
+        <span class="char-role" style="background:#226633">那美克星人</span>
+        <p class="char-desc">比克大魔王的轉世，最初是悟空的死敵，後來成為悟飯的師父與地球守護者。冷靜沉著的個性與強大的戰術頭腦讓他成為不可或缺的夥伴。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">那美克星人</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">古川登志夫（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">最強型態</span><span class="char-fact-val">橘色比克（Orange Piccolo）</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">魔貫光殺砲、神裂功</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="hero human">
+      <div class="char-img-wrap bg-krillin">
+        <span class="char-avatar-emoji">🥋</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Kuririn / クリリン</div>
+        <h3>克林</h3>
+        <span class="char-role" style="background:#cc8800">地球人</span>
+        <p class="char-desc">悟空自幼的修行友人，也是地球上最強的人類。雖然在宇宙級戰鬥中實力有限，但智慧、勇氣與策略思維讓他多次在關鍵時刻發揮重要作用。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">地球人</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">田中真弓（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">氣圓斬、後悔殺氣</span></div>
+          <div class="char-fact"><span class="char-fact-label">伴侶</span><span class="char-fact-val">18號（人造人）</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="hero human">
+      <div class="char-img-wrap bg-bulma">
+        <span class="char-avatar-emoji">🔬</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Bulma / ブルマ</div>
+        <h3>布瑪</h3>
+        <span class="char-role" style="background:#2266bb">天才科學家</span>
+        <p class="char-desc">Brief博士的女兒，天才發明家，擁有龍珠雷達等眾多發明。七龍珠故事的起點人物，貝吉塔的伴侶，特南克斯的母親。冒險精神與機智是她的最大武器。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">地球人</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">鶴 ひろみ（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">發明</span><span class="char-fact-val">龍珠雷達、時光機</span></div>
+          <div class="char-fact"><span class="char-fact-label">伴侶</span><span class="char-fact-val">貝吉塔</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="hero saiyan">
+      <div class="char-img-wrap bg-trunks">
+        <span class="char-avatar-emoji">🗡️</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Trunks / トランクス（未来）</div>
+        <h3>未來特南克斯</h3>
+        <span class="char-role" style="background:#7744aa">未來時間線</span>
+        <p class="char-desc">來自人造人蹂躪的未來時間線的貝吉塔與布瑪之子，持劍的超級賽亞人，乘坐母親布瑪製作的時光機回到過去改變歷史。Dragon Ball Super中達成超藍形態。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">賽亞人/地球人混血</span></div>
+          <div class="char-fact"><span class="char-fact-label">最強型態</span><span class="char-fact-val">超賽憤怒（Rage）</span></div>
+          <div class="char-fact"><span class="char-fact-label">武器</span><span class="char-fact-val">未來之劍</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="hero human">
+      <div class="char-img-wrap bg-chichi">
+        <span class="char-avatar-emoji">👩</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Chi-Chi / チチ</div>
+        <h3>麒麟（Chi-Chi）</h3>
+        <span class="char-role" style="background:#cc5533">悟空之妻</span>
+        <p class="char-desc">牛魔王之女，幼年時與悟空相識並承諾婚約，成年後要求悟空履行承諾嫁給她。嚴格的教育態度讓她成為悟飯學業的監督者，但對家人的愛護無庸置疑。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">地球人</span></div>
+          <div class="char-fact"><span class="char-fact-label">父親</span><span class="char-fact-val">牛魔王</span></div>
+          <div class="char-fact"><span class="char-fact-label">兒子</span><span class="char-fact-val">悟飯、悟天</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── VILLAINS ── -->
+  <h2 class="section-title">💀 主要反派</h2>
+  <div class="char-grid">
+
+    <div class="char-card" data-type="villain">
+      <div class="char-img-wrap bg-frieza">
+        <span class="char-avatar-emoji">👹</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Freeza / フリーザ</div>
+        <h3>弗利沙（Frieza）</h3>
+        <span class="char-role" style="background:#7733aa">宇宙帝王</span>
+        <p class="char-desc">銀河系最強的宇宙帝王，統治弗利沙軍團，曾下令消滅賽亞人種族。殘酷冷血的性格與強大實力讓他成為七龍珠最具代表性的反派，多次從死亡中復活並進化。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">弗利沙族</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">中尾隆聖（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">最終型態</span><span class="char-fact-val">黑弗利沙（Black Frieza）</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">死亡光線、爆發能量球</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="villain">
+      <div class="char-img-wrap bg-cell">
+        <span class="char-avatar-emoji">🧬</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Cell / セル</div>
+        <h3>賽魯（Cell）</h3>
+        <span class="char-role" style="background:#336644">生化人造人</span>
+        <p class="char-desc">由博士Gero人工合成的生化體，融合了七龍珠各大戰士的DNA，包括悟空、貝吉塔、弗利沙等。吸收18、17號後達到完全型態。主辦「Cell Games」，被悟飯以超賽2擊敗。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">生化人造人</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">若本規夫（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">能力</span><span class="char-fact-val">融合悟空等各戰士技能</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">地獄閃光（元氣彈改）</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="villain">
+      <div class="char-img-wrap bg-buu">
+        <span class="char-avatar-emoji">🌸</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Majin Bū / 魔人ブウ</div>
+        <h3>魔人布歐（Majin Buu）</h3>
+        <span class="char-role" style="background:#ee5588">古老魔人</span>
+        <p class="char-desc">由巫師Bibidi封印數百萬年的古代魔人，再次甦醒後形態多變。從邪惡布歐到純粹布歐，最後在悟空的元氣彈下消滅。天真無邪的外表與毀滅性能力形成強烈對比。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">魔人</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">千葉繁（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">能力</span><span class="char-fact-val">人體巧克力化、吸收融合</span></div>
+          <div class="char-fact"><span class="char-fact-label">形態</span><span class="char-fact-val">胖布歐→瘦布歐→純布歐</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="villain hero">
+      <div class="char-img-wrap bg-android" style="background:linear-gradient(160deg,#c0d8f0,#5588aa);">
+        <span class="char-avatar-emoji">🤖</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Android 18 / 人造人18号</div>
+        <h3>18號（人造人）</h3>
+        <span class="char-role" style="background:#5588aa">人造人・英雄</span>
+        <p class="char-desc">Gero博士改造的人造人，最初受命殺害悟空，後來嫁給克林成為地球人。無限能量的身體讓她的戰鬥力不輸超級賽亞人，宇宙生存大賽中是第7宇宙的重要成員。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">改造人類</span></div>
+          <div class="char-fact"><span class="char-fact-label">伴侶</span><span class="char-fact-val">克林</span></div>
+          <div class="char-fact"><span class="char-fact-label">女兒</span><span class="char-fact-val">馬倫</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── GODS ── -->
+  <h2 class="section-title">✨ 神明與天使</h2>
+  <div class="char-grid">
+
+    <div class="char-card" data-type="god">
+      <div class="char-img-wrap bg-beerus">
+        <span class="char-avatar-emoji">😼</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Beerus / ビルス</div>
+        <h3>比魯斯</h3>
+        <span class="char-role" style="background:#8833cc">破壞神</span>
+        <p class="char-desc">第7宇宙的破壞神，在沉眠數十年後甦醒尋訪「超級賽亞神」。喜好美食，以優雅外表和毀滅性力量著稱。平時性格乖戾，卻在關鍵時刻顯現出複雜的人性。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">破壞神族（貓型）</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">山寺宏一（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">天使</span><span class="char-fact-val">維斯（Whis）</span></div>
+          <div class="char-fact"><span class="char-fact-label">招式</span><span class="char-fact-val">宇宙神拳、摧滅之息</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="god">
+      <div class="char-img-wrap bg-whis">
+        <span class="char-avatar-emoji">🪄</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Whis / ウイス</div>
+        <h3>維斯（Whis）</h3>
+        <span class="char-role" style="background:#4488cc">天使</span>
+        <p class="char-desc">比魯斯的老師兼侍從，第7宇宙天使，大天使グラン・プリ的子女。戰鬥力遠超比魯斯，掌握時間回退術。以溫和語氣和優雅舉止掩蓋宇宙最頂級的武力。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">天使</span></div>
+          <div class="char-fact"><span class="char-fact-label">聲優</span><span class="char-fact-val">森田成一（日）</span></div>
+          <div class="char-fact"><span class="char-fact-label">能力</span><span class="char-fact-val">時間逆流、瞬間移動</span></div>
+          <div class="char-fact"><span class="char-fact-label">武器</span><span class="char-fact-val">天使法杖</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-card" data-type="god">
+      <div class="char-img-wrap" style="background:linear-gradient(160deg,#fffbe8,#FFD700);">
+        <span class="char-avatar-emoji">👁️</span>
+      </div>
+      <div class="char-body">
+        <div class="char-name-jp">Zen-Oh / 全王</div>
+        <h3>全王</h3>
+        <span class="char-role" style="background:#cc9900">宇宙頂點</span>
+        <p class="char-desc">統御全12宇宙的頂點存在，外表如幼兒卻擁有能一瞬間抹消宇宙的絕對力量。曾因破壞神惹惱而消滅6個宇宙，在宇宙生存大賽後與悟空成為「朋友」。</p>
+        <div class="char-facts">
+          <div class="char-fact"><span class="char-fact-label">種族</span><span class="char-fact-val">全王</span></div>
+          <div class="char-fact"><span class="char-fact-label">能力</span><span class="char-fact-val">宇宙抹消</span></div>
+          <div class="char-fact"><span class="char-fact-label">侍從</span><span class="char-fact-val">全王護衛隊</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+
+<script>
+function filterChar(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.char-card').forEach(card => {
+    if (type === 'all') {
+      card.style.display = '';
+    } else {
+      const t = card.getAttribute('data-type') || '';
+      card.style.display = t.includes(type) ? '' : 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

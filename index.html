@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七龍珠の戰鬥聖典 — Dragon Ball 資訊館</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body { background: #1a0800; }
+.world-below { background: #0f0500; padding: 0 0 10px; }
+.world-hint {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255,220,150,0.65);
+  padding: 12px;
+  font-style: italic;
+}
+.content-wrap { background: var(--cream); }
+
+/* ── WORLD SCENE ── */
+.world-wrap {
+  max-width: 900px;
+  margin: 30px auto 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 52px rgba(0,0,0,0.75), 0 0 60px rgba(255,102,0,0.2);
+  position: relative;
+}
+
+/* ── hotspot base ── */
+.world-hotspot {
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.25s;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.world-hotspot:hover {
+  background: rgba(255,102,0,0.14);
+  border-color: rgba(255,160,40,0.75);
+  box-shadow: 0 0 22px rgba(255,102,0,0.35);
+}
+
+.world-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(4px);
+  color: white;
+  padding: 5px 12px 5px 8px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  border: 1px solid rgba(255,160,40,0.3);
+  transition: transform 0.2s, background 0.2s;
+  pointer-events: none;
+}
+.world-hotspot:hover .world-badge {
+  background: rgba(140,50,0,0.9);
+  transform: scale(1.06);
+  border-color: rgba(255,160,40,0.65);
+}
+
+.hotspot-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF9900;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+.section-intro h2 { color: var(--orange-dark); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Page title -->
+<div style="background:linear-gradient(135deg,#5c1a00,#B84400 55%,#FF6600); color:white; text-align:center; padding:36px 24px 28px;">
+  <div style="font-size:2.8rem; margin-bottom:10px">🐉</div>
+  <h1 style="font-family:'M PLUS Rounded 1c',sans-serif; font-size:2.2rem; font-weight:800; margin-bottom:6px;">七龍珠の戰鬥聖典</h1>
+  <p style="opacity:0.88; max-width:500px; margin:0 auto;">集齊七顆龍珠，召喚神龍實現願望 · 鳥山明的傳說戰鬥漫畫宇宙</p>
+</div>
+
+<!-- ── THE WORLD SCENE ── -->
+<div class="world-below">
+  <div class="world-wrap">
+    <!-- Inline SVG: Dragon Ball world scene -->
+    <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#030008"/>
+          <stop offset="45%" stop-color="#0d0520"/>
+          <stop offset="75%" stop-color="#1f0800"/>
+          <stop offset="100%" stop-color="#0d1400"/>
+        </linearGradient>
+        <radialGradient id="earthG" cx="38%" cy="35%">
+          <stop offset="0%" stop-color="#88ccff"/>
+          <stop offset="25%" stop-color="#3399cc"/>
+          <stop offset="45%" stop-color="#2e8b57"/>
+          <stop offset="70%" stop-color="#1a5a30"/>
+          <stop offset="100%" stop-color="#060f06"/>
+        </radialGradient>
+        <radialGradient id="moonG" cx="40%" cy="35%">
+          <stop offset="0%" stop-color="#f0e8d8"/>
+          <stop offset="60%" stop-color="#d8d0c0"/>
+          <stop offset="100%" stop-color="#b0a898"/>
+        </radialGradient>
+        <radialGradient id="dbG" cx="35%" cy="30%">
+          <stop offset="0%" stop-color="#FFE080"/>
+          <stop offset="50%" stop-color="#FF8800"/>
+          <stop offset="100%" stop-color="#CC3300"/>
+        </radialGradient>
+        <radialGradient id="auraG" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#FFE066" stop-opacity="0.7"/>
+          <stop offset="40%" stop-color="#FF9900" stop-opacity="0.4"/>
+          <stop offset="75%" stop-color="#FF5500" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#FF2200" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="nimbus" cx="50%" cy="60%">
+          <stop offset="0%" stop-color="#FFE888"/>
+          <stop offset="100%" stop-color="#FFCC22"/>
+        </radialGradient>
+        <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a0800"/>
+          <stop offset="100%" stop-color="#080400"/>
+        </linearGradient>
+        <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d0500"/>
+          <stop offset="100%" stop-color="#050200"/>
+        </linearGradient>
+        <linearGradient id="waterG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1830"/>
+          <stop offset="100%" stop-color="#050d18"/>
+        </linearGradient>
+        <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a2a08"/>
+          <stop offset="100%" stop-color="#0a1404"/>
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Sky background -->
+      <rect width="900" height="480" fill="url(#sky)"/>
+
+      <!-- Stars -->
+      <g fill="white" opacity="0.9">
+        <circle cx="22" cy="18" r="1.2"/><circle cx="65" cy="8" r="0.9"/>
+        <circle cx="105" cy="25" r="1.1"/><circle cx="150" cy="12" r="0.8"/>
+        <circle cx="195" cy="30" r="1"/><circle cx="245" cy="8" r="1.3"/>
+        <circle cx="290" cy="22" r="0.9"/><circle cx="340" cy="10" r="1"/>
+        <circle cx="388" cy="28" r="0.8"/><circle cx="430" cy="15" r="1.1"/>
+        <circle cx="478" cy="7" r="1.3"/><circle cx="520" cy="30" r="0.9"/>
+        <circle cx="565" cy="12" r="1"/><circle cx="612" cy="25" r="0.8"/>
+        <circle cx="658" cy="8" r="1.2"/><circle cx="705" cy="20" r="1"/>
+        <circle cx="750" cy="12" r="0.9"/><circle cx="798" cy="28" r="1.1"/>
+        <circle cx="845" cy="10" r="0.8"/><circle cx="880" cy="22" r="1.3"/>
+        <circle cx="38" cy="55" r="0.8"/><circle cx="88" cy="48" r="1"/>
+        <circle cx="138" cy="60" r="0.9"/><circle cx="188" cy="45" r="0.8"/>
+        <circle cx="238" cy="55" r="1.1"/><circle cx="288" cy="42" r="0.9"/>
+        <circle cx="488" cy="50" r="1"/><circle cx="545" cy="38" r="0.8"/>
+        <circle cx="598" cy="58" r="1.1"/><circle cx="648" cy="44" r="0.9"/>
+        <circle cx="810" cy="50" r="0.8"/><circle cx="862" cy="40" r="1"/>
+        <circle cx="50" cy="90" r="0.7"/><circle cx="160" cy="80" r="0.9"/>
+        <circle cx="270" cy="95" r="0.7"/><circle cx="500" cy="85" r="0.8"/>
+        <circle cx="620" cy="92" r="0.7"/><circle cx="740" cy="78" r="0.9"/>
+        <circle cx="860" cy="88" r="0.8"/>
+      </g>
+      <!-- Twinkling brighter stars -->
+      <g fill="#FFD700" opacity="0.6">
+        <circle cx="75" cy="35" r="1.5"/><circle cx="350" cy="18" r="1.4"/>
+        <circle cx="580" cy="30" r="1.5"/><circle cx="820" cy="15" r="1.4"/>
+        <circle cx="460" cy="55" r="1.2"/><circle cx="180" cy="70" r="1.3"/>
+      </g>
+
+      <!-- Moon (upper left) -->
+      <circle cx="115" cy="72" r="32" fill="url(#moonG)"/>
+      <circle cx="107" cy="60" r="24" fill="#c8c0b0" opacity="0.4"/>
+      <circle cx="106" cy="78" r="6" fill="#a8a090" opacity="0.5"/>
+      <circle cx="124" cy="62" r="4" fill="#a8a090" opacity="0.5"/>
+      <circle cx="118" cy="88" r="3" fill="#a8a090" opacity="0.4"/>
+
+      <!-- Earth (upper right) -->
+      <circle cx="768" cy="82" r="60" fill="url(#earthG)"/>
+      <ellipse cx="748" cy="62" rx="20" ry="9" fill="white" opacity="0.65"/>
+      <ellipse cx="782" cy="88" rx="16" ry="7" fill="white" opacity="0.55"/>
+      <ellipse cx="755" cy="100" rx="10" ry="5" fill="white" opacity="0.4"/>
+      <circle cx="768" cy="82" r="60" fill="none" stroke="#4499cc" stroke-width="2" opacity="0.35"/>
+      <!-- terminator shadow on earth -->
+      <path d="M768,22 Q810,52 810,82 Q810,112 768,142 Q730,112 730,82 Q730,52 768,22 Z" fill="black" opacity="0.25"/>
+
+      <!-- Dragon Ball aura glow -->
+      <ellipse cx="440" cy="210" rx="130" ry="90" fill="url(#auraG)"/>
+
+      <!-- Nimbus cloud (金筋斗雲) -->
+      <g opacity="0.92">
+        <ellipse cx="278" cy="228" rx="48" ry="18" fill="url(#nimbus)"/>
+        <ellipse cx="258" cy="218" rx="28" ry="22" fill="#FFE888"/>
+        <ellipse cx="292" cy="210" rx="34" ry="26" fill="#FFE066"/>
+        <ellipse cx="320" cy="222" rx="24" ry="18" fill="#FFD700"/>
+        <ellipse cx="305" cy="232" rx="32" ry="12" fill="url(#nimbus)"/>
+      </g>
+
+      <!-- Dragon Ball (4-star) floating in center -->
+      <g filter="url(#glow)">
+        <circle cx="440" cy="195" r="36" fill="url(#dbG)"/>
+        <!-- shine -->
+        <ellipse cx="428" cy="182" rx="12" ry="8" fill="#FFE8AA" opacity="0.55"/>
+        <!-- outline -->
+        <circle cx="440" cy="195" r="36" fill="none" stroke="#FF9944" stroke-width="1.5" opacity="0.5"/>
+        <!-- horizontal band -->
+        <path d="M407,195 Q440,188 473,195" fill="none" stroke="#CC3300" stroke-width="1.2" opacity="0.6"/>
+        <!-- 4 red stars (simplified as 4-pointed polygons) -->
+        <g fill="#CC0000" opacity="0.95">
+          <!-- top-left -->
+          <polygon points="427,182 429,188 435,188 430,192 432,198 427,194 422,198 424,192 419,188 425,188"/>
+          <!-- top-right -->
+          <polygon points="453,182 455,188 461,188 456,192 458,198 453,194 448,198 450,192 445,188 451,188"/>
+          <!-- bottom-left -->
+          <polygon points="427,200 429,206 435,206 430,210 432,216 427,212 422,216 424,210 419,206 425,206"/>
+          <!-- bottom-right -->
+          <polygon points="453,200 455,206 461,206 456,210 458,216 453,212 448,216 450,210 445,206 451,206"/>
+        </g>
+      </g>
+
+      <!-- Ki lightning around Dragon Ball -->
+      <g stroke="#FFD700" stroke-width="1.5" opacity="0.7" fill="none">
+        <polyline points="405,180 398,172 392,178"/>
+        <polyline points="475,180 482,172 488,178"/>
+        <polyline points="440,158 435,148 442,142"/>
+        <polyline points="410,230 400,238 408,244"/>
+        <polyline points="470,230 480,238 472,244"/>
+      </g>
+
+      <!-- Mountains back layer -->
+      <polygon points="0,420 80,270 160,420" fill="url(#mtn1)"/>
+      <polygon points="120,420 220,200 320,420" fill="#100600"/>
+      <polygon points="270,420 390,240 510,420" fill="#0a0400"/>
+      <polygon points="460,420 570,210 680,420" fill="#100600"/>
+      <polygon points="630,420 740,255 850,420" fill="#0a0400"/>
+      <polygon points="810,420 880,280 930,420" fill="#100600"/>
+
+      <!-- Mountain highlights (moon/starlight on peaks) -->
+      <g fill="#2a1400" opacity="0.8">
+        <polygon points="80,272 86,268 92,272"/>
+        <polygon points="220,202 226,198 232,202"/>
+        <polygon points="390,242 396,238 402,242"/>
+        <polygon points="570,212 576,208 582,212"/>
+        <polygon points="740,257 746,253 752,257"/>
+      </g>
+
+      <!-- Water / lake -->
+      <rect x="0" y="390" width="900" height="55" fill="url(#waterG)"/>
+      <!-- water reflections -->
+      <ellipse cx="160" cy="405" rx="70" ry="5" fill="#1a3550" opacity="0.5"/>
+      <ellipse cx="440" cy="412" rx="90" ry="4" fill="#1a3550" opacity="0.4"/>
+      <ellipse cx="720" cy="406" rx="65" ry="4" fill="#1a3550" opacity="0.5"/>
+      <!-- Dragon Ball reflection on water -->
+      <ellipse cx="440" cy="418" rx="24" ry="5" fill="#FF8800" opacity="0.25"/>
+
+      <!-- Kame House on island (left) -->
+      <ellipse cx="155" cy="390" rx="65" ry="16" fill="#1a3010"/>
+      <ellipse cx="155" cy="388" rx="55" ry="10" fill="#223815"/>
+      <!-- house -->
+      <rect x="140" y="345" width="32" height="46" fill="#EE3333"/>
+      <polygon points="132,347 188,347 161,315" fill="#CC2222"/>
+      <!-- windows -->
+      <rect x="146" y="355" width="8" height="8" fill="#88CCFF" rx="1"/>
+      <rect x="158" y="355" width="8" height="8" fill="#88CCFF" rx="1"/>
+      <!-- door -->
+      <rect x="150" y="370" width="10" height="22" fill="#994422" rx="1"/>
+      <!-- turtle shell sign -->
+      <text x="161" y="338" font-size="11" fill="#FFD700" text-anchor="middle" font-weight="bold">亀</text>
+
+      <!-- Kami's Lookout / 神殿 (right) -->
+      <rect x="720" y="320" width="44" height="72" fill="#7744aa" opacity="0.9"/>
+      <rect x="710" y="308" width="64" height="16" fill="#9966cc" opacity="0.9"/>
+      <rect x="716" y="284" width="52" height="28" fill="#6633aa" opacity="0.85"/>
+      <rect x="720" y="270" width="44" height="18" fill="#8855bb" opacity="0.85"/>
+      <!-- lookout platform -->
+      <rect x="706" y="304" width="72" height="8" fill="#aa77dd" opacity="0.9"/>
+      <!-- lookout detail -->
+      <text x="742" y="300" font-size="10" fill="#FFD700" text-anchor="middle" font-weight="bold" opacity="0.9">神殿</text>
+      <!-- lookout glow -->
+      <ellipse cx="742" cy="380" rx="30" ry="6" fill="#8844aa" opacity="0.3"/>
+
+      <!-- Ground foreground -->
+      <rect x="0" y="445" width="900" height="35" fill="url(#groundG)"/>
+      <!-- ground texture lines -->
+      <g stroke="#1a2a08" stroke-width="1" opacity="0.4">
+        <line x1="0" y1="455" x2="900" y2="455"/>
+        <line x1="0" y1="465" x2="900" y2="465"/>
+      </g>
+
+      <!-- Cosmic energy particles -->
+      <g fill="#FF9900" opacity="0.5">
+        <circle cx="370" cy="160" r="2"/><circle cx="510" cy="155" r="1.5"/>
+        <circle cx="400" cy="140" r="1.5"/><circle cx="480" cy="145" r="2"/>
+        <circle cx="420" cy="248" r="1.5"/><circle cx="460" cy="255" r="2"/>
+        <circle cx="355" cy="240" r="1.5"/><circle cx="525" cy="242" r="1.5"/>
+      </g>
+    </svg>
+
+    <!-- Hotspot overlays -->
+    <!-- Upper left: saga/編年史 -->
+    <a href="saga.html" class="world-hotspot" style="left:2%;width:26%;top:4%;height:48%;" title="故事篇章">
+      <span class="world-badge"><span class="hotspot-dot"></span>⚔️ 故事篇章</span>
+    </a>
+
+    <!-- Upper right: chronicle -->
+    <a href="chronicle.html" class="world-hotspot" style="left:70%;width:28%;top:4%;height:48%;" title="編年史">
+      <span class="world-badge"><span class="hotspot-dot"></span>📅 編年史</span>
+    </a>
+
+    <!-- Center: Dragon Ball -->
+    <a href="dragonballs.html" class="world-hotspot" style="left:32%;width:34%;top:18%;height:52%;" title="七顆龍珠百科">
+      <span class="world-badge"><span class="hotspot-dot"></span>🟠 龍珠百科</span>
+    </a>
+
+    <!-- Lower left: characters (Kame House area) -->
+    <a href="characters.html" class="world-hotspot" style="left:2%;width:28%;top:58%;height:40%;" title="人物介紹">
+      <span class="world-badge"><span class="hotspot-dot"></span>👥 人物介紹</span>
+    </a>
+
+    <!-- Lower right: transformations (Lookout area) -->
+    <a href="transformations.html" class="world-hotspot" style="left:68%;width:30%;top:58%;height:40%;" title="變身型態">
+      <span class="world-badge"><span class="hotspot-dot"></span>⚡ 變身型態</span>
+    </a>
+
+    <!-- Bottom center: games -->
+    <a href="games.html" class="world-hotspot" style="left:30%;width:38%;top:80%;height:18%;" title="電玩專區">
+      <span class="world-badge"><span class="hotspot-dot"></span>🎮 電玩專區</span>
+    </a>
+  </div>
+
+  <div class="world-hint">
+    ✨ 點擊場景各處探索 ── 中央龍珠是龍珠百科，左側是故事篇章與人物，右側通往編年史與變身型態，底部是電玩
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="content-wrap">
+<div class="content-wrap" style="padding-top:36px;">
+
+  <div class="section-intro">
+    <h2>歡迎來到七龍珠戰鬥聖典</h2>
+    <p>鳥山明的曠世巨作——從1984年Weekly少年Jump連載至今，七龍珠改變了全球的漫畫與動畫文化。</p>
+  </div>
+
+  <div class="nav-cards">
+    <a href="chronicle.html" class="nav-card">
+      <span class="nav-card-icon">📅</span>
+      <h3>七龍珠編年史</h3>
+      <p>從1984年連載開始，跨越40年的七龍珠重要歷史事件與創作里程碑。</p>
+    </a>
+    <a href="characters.html" class="nav-card">
+      <span class="nav-card-icon">👥</span>
+      <h3>登場人物</h3>
+      <p>悟空、貝吉塔、比克、克林……認識七龍珠宇宙中的英雄、反派與神明。</p>
+    </a>
+    <a href="saga.html" class="nav-card">
+      <span class="nav-card-icon">⚔️</span>
+      <h3>故事篇章</h3>
+      <p>從賽亞人篇到宇宙生存大賽，完整七龍珠原著、Z、GT、Super各篇故事。</p>
+    </a>
+    <a href="transformations.html" class="nav-card">
+      <span class="nav-card-icon">⚡</span>
+      <h3>變身型態</h3>
+      <p>超級賽亞人、超級賽亞神、極意之境——全系列戰鬥變身型態完整圖鑑。</p>
+    </a>
+    <a href="dragonballs.html" class="nav-card">
+      <span class="nav-card-icon">🟠</span>
+      <h3>七顆龍珠百科</h3>
+      <p>地球龍珠、那美克星龍珠、超龍珠——各套龍珠的神秘力量與神龍傳說。</p>
+    </a>
+    <a href="movies.html" class="nav-card">
+      <span class="nav-card-icon">🎬</span>
+      <h3>劇場版電影</h3>
+      <p>從1986年第一部到2022年《超級英雄》，七龍珠大銀幕冒險完整回顧。</p>
+    </a>
+    <a href="games.html" class="nav-card">
+      <span class="nav-card-icon">🎮</span>
+      <h3>電玩專區</h3>
+      <p>從FC到PS5，Budokai、FighterZ、Sparking！Zero——四十年電玩戰鬥史。</p>
+    </a>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+
+</body>
+</html>

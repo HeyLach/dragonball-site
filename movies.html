@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>劇場版電影 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .movie-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:24px;margin-bottom:40px;
+  }
+  .movie-card {
+    background:white;border-radius:14px;overflow:hidden;
+    box-shadow:0 4px 18px var(--shadow);
+    transition:transform 0.2s,box-shadow 0.2s;
+    display:flex;flex-direction:column;
+  }
+  .movie-card:hover { transform:translateY(-4px);box-shadow:0 10px 28px var(--shadow-deep); }
+  .movie-banner {
+    height:100px;display:flex;align-items:center;justify-content:center;
+    font-size:3rem;position:relative;overflow:hidden;
+  }
+  .movie-body { padding:18px;flex:1; }
+  .movie-year { font-size:0.75rem;font-weight:800;color:var(--orange);margin-bottom:4px; }
+  .movie-body h3 {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:6px;line-height:1.3;
+  }
+  .movie-body p { font-size:0.85rem;color:var(--text-mid);line-height:1.65; }
+  .movie-meta { display:flex;gap:6px;flex-wrap:wrap;margin-top:10px; }
+
+  .canon-tag {
+    display:inline-block;padding:2px 9px;border-radius:12px;
+    font-size:0.72rem;font-weight:700;
+  }
+  .canon { background:#339944;color:white; }
+  .non-canon { background:#999;color:white; }
+  .semi-canon { background:#cc8800;color:white; }
+
+  .era-header {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:1.1rem;font-weight:800;color:white;
+    background:var(--orange-dark);
+    padding:10px 20px;border-radius:10px;
+    margin-bottom:20px;margin-top:10px;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html" class="active">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a0800,#B84400 55%,#FF6600);">
+  <div style="font-size:2.5rem;margin-bottom:10px">🎬</div>
+  <h1>劇場版電影</h1>
+  <p>從1986年第一部到2022年《超級英雄》——七龍珠大銀幕宇宙完整回顧</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">🎬 劇場版電影</span>
+  </div>
+
+  <div class="highlight-box">
+    <p>🎬 七龍珠劇場版截至2022年共有 <strong>22部正式電影</strong>（含非正史）。2013年以前的大多數劇場版為「非正史」（鳥山明未深度參與），2013年《神與神》起改由鳥山明親自監修，正式納入正史。</p>
+  </div>
+
+  <!-- ── 1980s ── -->
+  <div class="era-header">📼 1980年代 · Dragon Ball原著時期</div>
+  <div class="movie-grid">
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#8B4513,#D2691E)">🐉</div>
+      <div class="movie-body">
+        <div class="movie-year">1986年12月</div>
+        <h3>神龍の伝説（Curse of the Blood Rubies）</h3>
+        <p>七龍珠第一部劇場版，重新詮釋漫畫第一章的故事。悟空一行遭遇想以龍珠統治世界的惡王Gurumes，與原著設定略有差異。東映漫畫祭合輯之一。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+          <span class="badge badge-grey">45分鐘</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3a6a,#2255aa)">🌙</div>
+      <div class="movie-body">
+        <div class="movie-year">1987年7月</div>
+        <h3>魔神城の眠り姫（Sleeping Princess in Devil's Castle）</h3>
+        <p>龜仙人命令悟空和克林去救一位「公主」作為入學條件。實際上公主是一顆能量寶石，反派Lucifer企圖以此消滅太陽。布瑪首次以主要配角身份在劇場版登場。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#3a1a6a,#7733cc)">🐾</div>
+      <div class="movie-body">
+        <div class="movie-year">1988年7月</div>
+        <h3>摩訶不思議大冒険（Mystical Adventure）</h3>
+        <p>第三部原著劇場版，混合天下第一武道大會與Red Ribbon軍篇的設定重新改編。登場人物包括天津飯與餃子，他們首次以「好人」身份亮相。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── 1990s DBZ ── -->
+  <div class="era-header">📼 1990年代 · Dragon Ball Z時期</div>
+  <div class="movie-grid">
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#0a0a2a,#1a1a5a)">🌑</div>
+      <div class="movie-body">
+        <div class="movie-year">1989年7月</div>
+        <h3>Dead Zone（オラの悟飯をかえせ！！）</h3>
+        <p>DBZ第一部劇場版，大反派Garlic Jr.綁架悟飯企圖以超級龍珠獲得永生。幼年悟飯第一次展現戰鬥能力，以憤怒力量反擊。本作在DBZ動畫後來有所提及，有一定正史色彩。</p>
+        <div class="movie-meta">
+          <span class="canon-tag semi-canon">部分正史</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0030,#440099)">💜</div>
+      <div class="movie-body">
+        <div class="movie-year">1990年3月</div>
+        <h3>世界一強い男たち（The World's Strongest）</h3>
+        <p>科學家Dr. Kochin以龍珠解封其師Dr. Wheelo，企圖將最強者的腦移植到機器身體中。本作以「科學vs.武術」為主題，是DBZ劇場版中較受好評的作品。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3300,#336600)">🌿</div>
+      <div class="movie-body">
+        <div class="movie-year">1990年7月</div>
+        <h3>地球まるごと超決戦（The Tree of Might）</h3>
+        <p>外星人塔爾斯（Turles）在地球種下「生命樹」（Tree of Might），吸乾星球生命力。塔爾斯外貌與悟空相似（同是賽亞人），兩人展開激戰。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0a00,#552200)">🔥</div>
+      <div class="movie-body">
+        <div class="movie-year">1991年3月</div>
+        <h3>超戦士撃破！！勝つのはオレだ（Super Android 13）</h3>
+        <p>Dr. Gero在死後仍在超級電腦中製造了人造人13、14、15號，目標是殺死悟空。悟空以元氣彈吸收後直接打擊，此打法後來成爭議話題。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#111133,#223388)">⚡</div>
+      <div class="movie-body">
+        <div class="movie-year">1993年3月</div>
+        <h3>燃えつきろ！！熱戦・烈戦・超激戦（Bojack Unbound）</h3>
+        <p>銀河系級武道大賽中，從封印中逃脫的銀河系海賊鮑傑克（Bojack）帶領部下大開殺戒。悟空以鬼神道從天界現身相助，孫悟飯以超賽2擊敗鮑傑克，是本作最大亮點。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0020,#5500aa)">🟢</div>
+      <div class="movie-body">
+        <div class="movie-year">1993年7月</div>
+        <h3>極限バトル！！三大超サイヤ人（Broly – The Legendary Super Saiyan）</h3>
+        <p>非正史版布羅利（Broly）首次登場，自稱「傳說中的超級賽亞人」，戰鬥力誇張到超越所有人。布羅利的嚎叫「カカロット！！」成為七龍珠最知名的台詞之一，本作是七龍珠非正史劇場版中銷售最高的一部。</p>
+        <div class="movie-meta">
+          <span class="canon-tag non-canon">非正史</span>
+          <span class="badge badge-orange">布羅利初登場</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── 2013+ CANON ── -->
+  <div class="era-header">🎬 2013年後 · 正史劇場版</div>
+  <div class="movie-grid">
+
+    <div class="movie-card" style="border:2px solid var(--orange);">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#400000,#CC0000)">😼</div>
+      <div class="movie-body">
+        <div class="movie-year">2013年3月</div>
+        <h3>ドラゴンボールZ 神と神（Battle of Gods）</h3>
+        <p>破壞神比魯斯甦醒尋訪超級賽亞神，悟空以六名純善賽亞人的氣轉化為超賽神對決比魯斯。鳥山明親自監修，引入神之力、比魯斯、維斯等Super時代核心設定，是七龍珠時隔17年的正史回歸。</p>
+        <div class="movie-meta">
+          <span class="canon-tag canon">正史</span>
+          <span class="badge badge-red">超賽神登場</span>
+          <span class="badge badge-gold">票房No.1（當時）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card" style="border:2px solid var(--orange);">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#111,#444)">✨</div>
+      <div class="movie-body">
+        <div class="movie-year">2015年4月</div>
+        <h3>ドラゴンボールZ 復活の「F」（Resurrection 'F'）</h3>
+        <p>弗利沙以龍珠復活，修練後達成黃金弗利沙形態。悟空與貝吉塔以超藍（SSGSS）對決黃金弗利沙。票房達37億日圓，日本年度票房TOP5，確立Super宇宙觀的基礎。</p>
+        <div class="movie-meta">
+          <span class="canon-tag canon">正史</span>
+          <span class="badge badge-gold">黃金弗利沙</span>
+          <span class="badge badge-blue">超藍登場</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card" style="border:2px solid var(--orange);">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#001a3a,#003388)">🌌</div>
+      <div class="movie-body">
+        <div class="movie-year">2018年12月</div>
+        <h3>Dragon Ball Super: Broly</h3>
+        <p>鳥山明全面重新設計的布羅利正史化。布羅利被父親帕拉加斯（Paragus）培育成武器，被弗利沙帶去對付悟空。最終悟吉塔（Gogeta）以超藍擊敗覺醒的布羅利，但布羅利被朋友傳送離開，保全性命。全球票房突破1億美元。</p>
+        <div class="movie-meta">
+          <span class="canon-tag canon">正史</span>
+          <span class="badge badge-orange">布羅利正史化</span>
+          <span class="badge badge-gold">系列最高票房</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card" style="border:2px solid var(--orange);">
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3300,#44aa00)">🦁</div>
+      <div class="movie-body">
+        <div class="movie-year">2022年6月</div>
+        <h3>Dragon Ball Super: Super Hero</h3>
+        <p>首部使用CG動畫技術製作的七龍珠正史劇場版。主角換成悟飯與比克，紅絲帶軍新人造人「伽馬1號」「伽馬2號」登場。悟飯覺醒野獸型態、比克達成橘色比克，為系列副主角提供了正式的強化路線。</p>
+        <div class="movie-meta">
+          <span class="canon-tag canon">正史</span>
+          <span class="badge badge-orange">野獸悟飯</span>
+          <span class="badge badge-green">橘色比克</span>
+          <span class="badge badge-blue">CG首作</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+</body>
+</html>

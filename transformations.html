@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>變身型態 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .power-scale { display:flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:700;color:var(--text-light);margin-top:10px; }
+  .power-bar { flex:1;height:7px;background:#f0e8e0;border-radius:4px;overflow:hidden; }
+  .power-fill { height:100%;border-radius:4px;background:linear-gradient(90deg,var(--orange),var(--gold));transition:width 1.2s ease; }
+  .t-ssj      { border-left-color: #FFD700; }
+  .t-ssj2     { border-left-color: #FFEE22; }
+  .t-ssj3     { border-left-color: #FFCC00; }
+  .t-ssjg     { border-left-color: #CC3333; }
+  .t-ssb      { border-left-color: #2299FF; }
+  .t-ui       { border-left-color: #AAAAFF; }
+  .t-beast    { border-left-color: #FF6677; }
+  .t-oozaru   { border-left-color: #884400; }
+  .t-golden   { border-left-color: #FFD700; }
+  .t-orange   { border-left-color: #FF6600; }
+  .t-ultra    { border-left-color: #CC44FF; }
+
+  @keyframes aura-pulse {
+    0%,100% { box-shadow:0 0 16px currentColor, 0 4px 20px var(--shadow); }
+    50% { box-shadow:0 0 30px currentColor, 0 8px 28px var(--shadow-deep); }
+  }
+  .transform-card:hover { animation:aura-pulse 1.5s ease-in-out infinite; }
+
+  .series-label {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:0.78rem;font-weight:800;color:white;
+    background:var(--orange-dark);padding:3px 12px;border-radius:20px;
+    display:inline-block;margin-bottom:18px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html" class="active">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a0800,#B84400 55%,#FF6600);">
+  <div style="font-size:2.5rem;margin-bottom:10px">⚡</div>
+  <h1>變身型態圖鑑</h1>
+  <p>超級賽亞人到極意之境——七龍珠宇宙所有重要戰鬥變身型態完整介紹</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">⚡ 變身型態</span>
+  </div>
+
+  <div class="highlight-box gold">
+    <p>⚡ 七龍珠的「戰鬥力」概念和各種變身型態是漫畫史上最具影響力的設計之一。「超級賽亞人」的金色頭髮在全球成為大眾文化符號，每一次新型態登場都掀起粉絲狂熱。</p>
+  </div>
+
+  <!-- ── SAIYAN TRANSFORMATIONS ── -->
+  <h2 class="section-title">💛 賽亞人系列變身</h2>
+  <span class="series-label">孫悟空・貝吉塔・悟飯 等</span>
+
+  <div class="transform-grid">
+
+    <div class="transform-card t-oozaru">
+      <div class="transform-header">
+        <span class="transform-icon">🦍</span>
+        <div>
+          <h3>大猿型（Oozaru）</h3>
+          <div class="badge badge-grey">初期</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>賽亞人在望月照射時，因尾巴上的特殊細胞引發大猿化，體積暴增10倍，戰鬥力×10。悟空幼年時多次使用，後來失去尾巴後無法再變身。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:15%"></div></div>
+          <span>×10</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-ssj" style="border-left-color:#FFD700;">
+      <div class="transform-header">
+        <span class="transform-icon">💛</span>
+        <div>
+          <h3>超級賽亞人（SSJ）</h3>
+          <div class="badge badge-gold">那美克星篇</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>傳說中的「超級賽亞人」——金色頭髮豎起、藍色眼睛、黃色氣場。悟空在那美克星因克林被弗利沙殺死而憤怒引爆。戰鬥力提升50倍，是七龍珠最具代表性的變身。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:35%"></div></div>
+          <span>×50</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-ssj2">
+      <div class="transform-header">
+        <span class="transform-icon">⚡</span>
+        <div>
+          <h3>超級賽亞人2（SSJ2）</h3>
+          <div class="badge badge-orange">Cell篇</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>頭髮更加豎直，周圍出現放電般的電弧，氣場更强烈。最早由孫悟飯在對抗賽魯時達成，因憤怒超越了超賽的極限。戰鬥力是超賽1的2倍，是Cell篇的決定性變身。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:50%"></div></div>
+          <span>×100</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-ssj3">
+      <div class="transform-header">
+        <span class="transform-icon">🌊</span>
+        <div>
+          <h3>超級賽亞人3（SSJ3）</h3>
+          <div class="badge badge-orange">布歐篇</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>頭髮極度延長至腰部以下，眉毛消失，氣場如風暴般龐大。悟空在天界修練中開發，消耗極大，難以長時間維持。視覺衝擊力極強，是布歐篇前期的最強展示。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:60%"></div></div>
+          <span>×400</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-ssjg" style="border-left-color:#CC3333;">
+      <div class="transform-header">
+        <span class="transform-icon">🔴</span>
+        <div>
+          <h3>超級賽亞神（SSG）</h3>
+          <div class="badge badge-red">神與神篇</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>由六名純善賽亞人（含未出生者）的氣灌注一人而成的「神之超賽亞人」。紅色頭髮、紅色眼瞳、纖細的神之氣場。比魯斯的破壞神等級，需要神之氣才能達成，開啟了Super時代的全新戰力層次。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:72%"></div></div>
+          <span>神域</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-ssb" style="border-left-color:#2299FF;">
+      <div class="transform-header">
+        <span class="transform-icon">💙</span>
+        <div>
+          <h3>超級賽亞神超級賽亞人（SSGSS/超藍）</h3>
+          <div class="badge badge-blue">Super篇</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>俗稱「超藍（Super Saiyan Blue）」。在掌握超賽神之力後再進入超賽狀態，結合神之氣與超賽氣，藍色頭髮、藍眼、藍色氣場。Super初期悟空和貝吉塔的主要強化型態。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:80%"></div></div>
+          <span>超神域</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-ui" style="border-left-color:#AAAAFF;">
+      <div class="transform-header">
+        <span class="transform-icon">🤍</span>
+        <div>
+          <h3>極意之境（Ultra Instinct）</h3>
+          <div class="badge badge-purple">宇宙生存大賽</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>俗稱「兆」。身體自動閃避和攻擊，無需大腦思考，是天使等級的戰鬥技術。初現為身體本能閃躲，完全型態時頭髮變為銀白色，眼睛銀灰。比魯斯都難以掌握的境界。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:93%"></div></div>
+          <span>天使域</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card" style="border-left-color:#CC44FF;">
+      <div class="transform-header">
+        <span class="transform-icon">🟣</span>
+        <div>
+          <h3>自我極致（Ultra Ego）</h3>
+          <div class="badge badge-purple">Super漫畫</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>貝吉塔在跟隨比魯斯學習後達成的獨特變身——與悟空的「身體本能」相反，是基於「破壞之心」的戰士之路。頭髮變為紫色，受傷反而使力量增幅，體現貝吉塔獨特的戰鬥哲學。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:88%"></div></div>
+          <span>破壞神域</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── GOHAN / OTHER ── -->
+  <h2 class="section-title">🟢 悟飯・比克特殊變身</h2>
+  <div class="transform-grid">
+
+    <div class="transform-card" style="border-left-color:#88cc66;">
+      <div class="transform-header">
+        <span class="transform-icon">👓</span>
+        <div>
+          <h3>潛力解放悟飯（Gohan Blanco）</h3>
+          <div class="badge badge-green">Super篇</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>在老界王神解封悟飯全部潛力後達成的形態，白色頭髮、紫色眼睛。不走超賽路線而是純粹釋放自身潛力，在宇宙生存大賽中展現驚人戰鬥力，能與Cell-Max匹敵的強力版本。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:86%"></div></div>
+          <span>頂級</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-beast" style="border-left-color:#FF6677;">
+      <div class="transform-header">
+        <span class="transform-icon">🦁</span>
+        <div>
+          <h3>野獸悟飯（Beast Gohan）</h3>
+          <div class="badge badge-red">Super Hero 2022</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>Super Hero劇場版中，因比克生命垂危激發的爆發型態。頭髮呈黑白相間，眼睛深紅。在潛力解放型態基礎上再度突破，消滅了賽魯超體（Cell-Max），展現比克比克橘色更強的絕對戰力。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:91%"></div></div>
+          <span>極限</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card t-orange" style="border-left-color:#FF6600;">
+      <div class="transform-header">
+        <span class="transform-icon">💚</span>
+        <div>
+          <h3>橘色比克（Orange Piccolo）</h3>
+          <div class="badge badge-orange">Super Hero 2022</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>比克在全王的神龍那美克蒂爾（Shenron）許願後獲得的潛力解放型態，皮膚轉為橘色並體型增大。這是比克在七龍珠史上第一次獲得與主角同等級的重大強化，終於能以獨立戰力登上舞台。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:84%"></div></div>
+          <span>神域級</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── VILLAIN TRANSFORMATIONS ── -->
+  <h2 class="section-title">💀 反派變身</h2>
+  <div class="transform-grid">
+
+    <div class="transform-card t-golden" style="border-left-color:#FFD700;">
+      <div class="transform-header">
+        <span class="transform-icon">✨</span>
+        <div>
+          <h3>黃金弗利沙（Golden Frieza）</h3>
+          <div class="badge badge-gold">復活的F 2015</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>弗利沙為對抗神之戰力而修練4個月後達成的究極型態，金色身體，戰鬥力媲美超藍。但因修練時間過短，無法長時間維持。後來在Super漫畫中達成「黑弗利沙（Black Frieza）」超越超藍進化。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:82%"></div></div>
+          <span>神域</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card" style="border-left-color:#111111;">
+      <div class="transform-header">
+        <span class="transform-icon">⬛</span>
+        <div>
+          <h3>黑弗利沙（Black Frieza）</h3>
+          <div class="badge badge-grey">Super漫畫</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>弗利沙在時間靜止空間中修練10年後達成的最終形態。全身漆黑，單拳擊倒同時使用極意之境的悟空與使用自我極致的貝吉塔，展現遠超神域的恐怖戰力。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:97%"></div></div>
+          <span>???</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transform-card" style="border-left-color:#338844;">
+      <div class="transform-header">
+        <span class="transform-icon">🧬</span>
+        <div>
+          <h3>賽魯完全型（Perfect Cell）</h3>
+          <div class="badge badge-green">Cell篇</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>吸收18號後達成的完全型態，融合了賽亞人、那美克星人、弗利沙族等多種基因的終極進化。自信滿溢，主辦Cell Games挑戰世界最強。在超賽2悟飯的龜波氣功下最終潰滅。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:55%"></div></div>
+          <span>Z篇頂級</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── GT/SPECIAL ── -->
+  <h2 class="section-title">🌀 GT・特殊變身</h2>
+  <div class="transform-grid">
+
+    <div class="transform-card" style="border-left-color:#884400;">
+      <div class="transform-header">
+        <span class="transform-icon">🦍</span>
+        <div>
+          <h3>超大猿（Golden Oozaru）</h3>
+          <div class="badge badge-grey">GT（非正史）</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>GT中悟空恢復尾巴後，在宇宙中看到全月引發大猿化，但因掌握超賽4能量，大猿金色化。是超賽4的前形態，尺寸如行星，破壞力無與倫比。</p>
+      </div>
+    </div>
+
+    <div class="transform-card" style="border-left-color:#884400;">
+      <div class="transform-header">
+        <span class="transform-icon">🐾</span>
+        <div>
+          <h3>超級賽亞人4（SSJ4）</h3>
+          <div class="badge badge-grey">GT（非正史）</div>
+        </div>
+      </div>
+      <div class="transform-body">
+        <p>GT限定的最強型態，融合超大猿型的強大與賽亞人形態。黑色頭髮、紅色眼影、身體覆蓋紅色毛髮，氣場深紅。雖然GT為非正史，超賽4的外觀設計仍是粉絲最喜愛的型態之一。</p>
+        <div class="power-scale">
+          <span>戰鬥力</span>
+          <div class="power-bar"><div class="power-fill" style="width:78%"></div></div>
+          <span>GT最強</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+</body>
+</html>

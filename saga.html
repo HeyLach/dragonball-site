@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>故事篇章 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .series-tab {
+    display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;justify-content:center;
+  }
+  .stab {
+    padding:8px 20px;border-radius:20px;border:2px solid var(--orange);
+    background:white;color:var(--orange-dark);cursor:pointer;font-weight:800;
+    font-size:0.88rem;font-family:inherit;transition:all 0.2s;
+  }
+  .stab:hover,.stab.active { background:var(--orange);color:white; }
+
+  .saga-section { margin-bottom:48px; }
+  .saga-section-title {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:1.2rem;font-weight:800;color:var(--orange-dark);
+    background:linear-gradient(135deg,#fff5e8,#ffeedd);
+    padding:12px 20px;border-radius:10px;border-left:5px solid var(--orange);
+    margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+
+  .saga-card {
+    background:white;border-radius:12px;
+    box-shadow:0 3px 14px var(--shadow);
+    margin-bottom:16px;overflow:hidden;
+    border-left:4px solid var(--orange-light);
+    transition:transform 0.2s,box-shadow 0.2s;
+  }
+  .saga-card:hover { transform:translateX(4px);box-shadow:0 6px 22px var(--shadow-deep); }
+
+  .saga-header {
+    padding:16px 20px 12px;
+    display:flex;align-items:flex-start;gap:14px;cursor:pointer;
+    user-select:none;
+  }
+  .saga-num {
+    width:36px;height:36px;border-radius:50%;
+    background:var(--orange);color:white;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:0.9rem;flex-shrink:0;
+    font-family:'M PLUS Rounded 1c',sans-serif;
+  }
+  .saga-title-wrap { flex:1; }
+  .saga-title-wrap h3 {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:4px;
+  }
+  .saga-meta { font-size:0.78rem;color:var(--text-light);display:flex;gap:10px;flex-wrap:wrap; }
+  .saga-toggle { font-size:1.2rem;color:var(--orange);transition:transform 0.3s; }
+  .saga-card.open .saga-toggle { transform:rotate(180deg); }
+
+  .saga-body {
+    display:none;
+    padding:0 20px 18px 70px;
+    font-size:0.88rem;color:var(--text-mid);line-height:1.75;
+  }
+  .saga-card.open .saga-body { display:block; }
+
+  .villain-tag {
+    display:inline-block;padding:2px 10px;border-radius:12px;
+    font-size:0.75rem;font-weight:700;margin-right:4px;margin-bottom:4px;
+    color:white;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html" class="active">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a0800,#B84400 55%,#FF6600);">
+  <div style="font-size:2.5rem;margin-bottom:10px">⚔️</div>
+  <h1>故事篇章</h1>
+  <p>從少年悟空的冒險到宇宙生存大賽——七龍珠全系列故事弧完整回顧</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">⚔️ 故事篇章</span>
+  </div>
+
+  <div class="series-tab">
+    <button class="stab active" onclick="showSeries('all',this)">全系列</button>
+    <button class="stab" onclick="showSeries('db',this)">Dragon Ball</button>
+    <button class="stab" onclick="showSeries('dbz',this)">Dragon Ball Z</button>
+    <button class="stab" onclick="showSeries('super',this)">Dragon Ball Super</button>
+    <button class="stab" onclick="showSeries('gt',this)">Dragon Ball GT</button>
+  </div>
+
+  <!-- ── DRAGON BALL (原著) ── -->
+  <div class="saga-section" data-series="db">
+    <div class="saga-section-title">
+      <span>🟠</span> Dragon Ball 原著篇（1984–1989）
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">01</div>
+        <div class="saga-title-wrap">
+          <h3>龍珠探索篇（Red Ribbon前）</h3>
+          <div class="saga-meta"><span>📅 1984–1986（漫畫）</span><span>🎯 主反派：烏龍</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>故事從少年悟空與布瑪相遇開始，兩人踏上尋找七顆龍珠的旅途。途中遭遇烏龍（Oolong）、雅木茶（Yamcha）、布瑪奶奶（龜仙人）等人物。悟空第一次參加天下第一武道大會，以不可思議的力量震驚所有人。</p>
+        <p>本篇充滿冒險、喜劇色彩，風格偏向輕鬆的少年漫畫，正是鳥山明從《怪博士與機器娃娃》轉型七龍珠的過渡期。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#996633">烏龍</span>
+          <span class="villain-tag" style="background:#996633">皮拉夫</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">02</div>
+        <div class="saga-title-wrap">
+          <h3>紅絲帶軍篇（Red Ribbon Army）</h3>
+          <div class="saga-meta"><span>📅 1985–1986（漫畫）</span><span>🎯 主反派：Red Ribbon軍</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>強大的Red Ribbon軍以組織力量追奪龍珠，悟空獨自對抗整個軍事組織，以一人之力摧毀Red Ribbon總部。Tao白（殺手）和將軍Black等刻印深刻的反派在此篇登場。</p>
+        <p>本篇展現悟空超乎常人的成長，並為後來賽魯篇的人造人博士Gero埋下伏筆。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#cc2222">Colonel Silver</span>
+          <span class="villain-tag" style="background:#cc2222">Tao白</span>
+          <span class="villain-tag" style="background:#cc2222">Red Ribbon軍</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">03</div>
+        <div class="saga-title-wrap">
+          <h3>比克大魔王篇（Piccolo Daimao）</h3>
+          <div class="saga-meta"><span>📅 1986–1988（漫畫）</span><span>🎯 主反派：比克大魔王</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>七龍珠原著最黑暗的篇章。比克大魔王甦醒，以龍珠恢復年輕後展開全球統治，殺死克林、天津飯老師等人。悟空在仇恨驅動下突破極限，最終以擊穿比克大魔王身體的方式取勝。</p>
+        <p>本篇奠定七龍珠「認真戰鬥」風格，標誌性的一幕是悟空穿透比克大魔王的場景。比克大魔王最後吐出卵，孵化出現在的「比克」，成為Z篇重要角色。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#226633">比克大魔王</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">04</div>
+        <div class="saga-title-wrap">
+          <h3>天下第一武道大會（最終回）</h3>
+          <div class="saga-meta"><span>📅 1988–1989（漫畫）</span><span>🎯 主反派：比克（早期）</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>成年後的悟空與比克在天下第一武道大會決賽相遇，是原著最精彩的武道大賽篇章。悟空與比克激戰，悟空以「靠圈外」勝利（飛出界），最後握手和解，為Z篇的「比克成為盟友」鋪墊。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DRAGON BALL Z ── -->
+  <div class="saga-section" data-series="dbz">
+    <div class="saga-section-title">
+      <span>⚡</span> Dragon Ball Z 篇（1989–1996）
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">05</div>
+        <div class="saga-title-wrap">
+          <h3>賽亞人篇（Saiyan Saga）</h3>
+          <div class="saga-meta"><span>📅 1989–1990（漫畫/動畫）</span><span>🎯 主反派：拉迪茲・貝吉塔・那巴</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>DBZ的開端。悟空的哥哥拉迪茲（Raditz）登場，揭露悟空為賽亞人「卡卡羅特」的身世。悟空犧牲自己讓比克殺死拉迪茲，死後在天界修練。</p>
+        <p>一年後賽亞人貝吉塔與那巴入侵地球，地球戰士們雖奮力抵抗仍多人陣亡。悟空從天界回來以界王拳大幅提升戰力，最終以元氣彈擊退貝吉塔。比克為救悟飯犧牲，那美克星的龍珠成為復活的希望。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#4455aa">貝吉塔</span>
+          <span class="villain-tag" style="background:#885544">拉迪茲</span>
+          <span class="villain-tag" style="background:#885544">那巴</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">06</div>
+        <div class="saga-title-wrap">
+          <h3>那美克星篇（Namek / Frieza Saga）</h3>
+          <div class="saga-meta"><span>📅 1990–1991（漫畫/動畫）</span><span>🎯 主反派：弗利沙・金薩・五老星</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>為了復活那美克星的比克，悟飯、克林、布瑪前往那美克星尋找那美克星龍珠。宇宙帝王弗利沙也帶領軍隊搜尋龍珠，展開驚天大戰。</p>
+        <p>金薩隊、Recoome等精英戰士（ギニュー特戦隊）相繼登場。最高潮是弗利沙決戰時，克林被殺死引發悟空超級賽亞人覺醒，展開七龍珠史上最驚天動地的決戰。那美克星最後爆炸，弗利沙僅剩半身在虛空中。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#7733aa">弗利沙</span>
+          <span class="villain-tag" style="background:#aa5533">金薩</span>
+          <span class="badge badge-gold">超級賽亞人首次覺醒</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">07</div>
+        <div class="saga-title-wrap">
+          <h3>人造人・賽魯篇（Android / Cell Saga）</h3>
+          <div class="saga-meta"><span>📅 1991–1993（漫畫/動畫）</span><span>🎯 主反派：17號・18號・賽魯</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>未來特南克斯從未來回到過去警告人造人威脅，戰士們開始針對人造人Androids準備。博士Gero打造的人造人16、17、18號相繼登場，Gero自己也成為人造人19號。</p>
+        <p>更大的威脅：生化人造人「賽魯」從未來穿越而來，吸收17、18號後達到完全型態，舉辦「賽魯運動會」（Cell Games）挑戰地球最強者。最終超賽2悟飯以父子龜波氣功徹底消滅賽魯。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#338844">賽魯（Cell）</span>
+          <span class="badge badge-orange">超賽2首次覺醒</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">08</div>
+        <div class="saga-title-wrap">
+          <h3>魔人布歐篇（Majin Buu Saga）</h3>
+          <div class="saga-meta"><span>📅 1993–1995（漫畫）</span><span>🎯 主反派：Babidi・Dabura・魔人布歐</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>七年後天下第一武道大會再次舉行，巫師Babidi為復活魔人布歐在暗中收集戰士的氣。貝吉塔為追求力量被Babidi附身成為魔人貝吉塔，在武道大會上大開殺戒。</p>
+        <p>胖布歐→邪惡布歐→瘦布歐→純粹布歐等形態相繼出現，其中超賽3悟空、波塔拉合體悟吉塔（Vegito）、道具融合器合體結構力（Gotenks）等強力形態登場。最終悟空以全宇宙人類提供的元氣彈消滅純粹布歐。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#ee5588">魔人布歐</span>
+          <span class="badge badge-gold">超賽3首次覺醒</span>
+          <span class="badge badge-orange">波塔拉合體登場</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DRAGON BALL SUPER ── -->
+  <div class="saga-section" data-series="super">
+    <div class="saga-section-title">
+      <span>🔵</span> Dragon Ball Super 篇（2015–2018・漫畫持續）
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">09</div>
+        <div class="saga-title-wrap">
+          <h3>神と神篇（Battle of Gods）</h3>
+          <div class="saga-meta"><span>📅 2015年（動畫）</span><span>🎯 主反派：比魯斯</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>破壞神比魯斯甦醒尋找「超級賽亞神」，與悟空對決。六名純善賽亞人（悟空、貝吉塔、悟飯、悟天、特南克斯及布瑪腹中未出生的潘）的氣匯聚成超賽神，悟空首次以神之力對抗比魯斯。雖然最後未能戰勝比魯斯，但比魯斯決定繼續長眠，地球得救。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-red">超賽神首次登場</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">10</div>
+        <div class="saga-title-wrap">
+          <h3>復活的F篇（Resurrection 'F'）</h3>
+          <div class="saga-meta"><span>📅 2015年（動畫）</span><span>🎯 主反派：黃金弗利沙</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>弗利沙軍殘餘勢力以龍珠復活弗利沙，弗利沙修練後進化為黃金弗利沙。悟空和貝吉塔以超藍（SSGSS）應戰。決鬥關鍵時刻，弗利沙爆炸地球，維斯啟動時間回退術讓悟空在爆炸前擊敗弗利沙，弗利沙再度被消滅。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-blue">超藍（SSGSS）首次登場</span>
+          <span class="badge badge-gold">黃金弗利沙</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">11</div>
+        <div class="saga-title-wrap">
+          <h3>宇宙6號篇（Universe 6 Saga）</h3>
+          <div class="saga-meta"><span>📅 2015–2016年（動畫）</span><span>🎯 對手：宇宙6號戰士</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>比魯斯的兄弟———宇宙6號破壞神夏莫絲（Champa）挑戰宇宙7號比賽，賭注是超龍珠與地球。宇宙6號代表包括卡貝（Cabba）、日冕（Hit）等強敵。悟空在此篇開發「超賽神超賽亞人」（SSGSS）對抗日冕的時停能力。</p>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">12</div>
+        <div class="saga-title-wrap">
+          <h3>未來特南克斯篇（Future Trunks Saga）</h3>
+          <div class="saga-meta"><span>📅 2016–2017年（動畫）</span><span>🎯 主反派：Goku Black・Zamasu</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>未來特南克斯逃到現在避難，帶來「Goku Black」（黑悟空）的威脅。Goku Black原來是未來世界的卡比（Zamas）換取悟空身體後的形態，與未來Zamas合體後成為融合Zamasu，以不死之身威脅宇宙。</p>
+        <p>最終全王抹消了那個時間線的整個宇宙，未來特南克斯只能前往另一時間線生活。這是Super最具悲劇色彩的篇章。</p>
+        <div style="margin-top:8px">
+          <span class="villain-tag" style="background:#111">Goku Black</span>
+          <span class="villain-tag" style="background:#338855">Zamasu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">13</div>
+        <div class="saga-title-wrap">
+          <h3>宇宙生存大賽篇（Tournament of Power）</h3>
+          <div class="saga-meta"><span>📅 2017–2018年（動畫）</span><span>🎯 80位頂尖戰士混戰</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>全王舉辦的宇宙生存大賽，12個宇宙各派10名戰士，落敗宇宙將被抹消。宇宙7號（地球方）包括悟空、貝吉塔、悟飯、17號、18號、比克、天津飯、克林等10人。</p>
+        <p>最大亮點：悟空在決戰時覺醒極意之境（Ultra Instinct），與宇宙11號最強戰士基典（Jiren）對決；17號最後以自爆保護他人；最終獲勝的17號用龍珠希望「復活所有消滅的宇宙」，展現系列最感人的結局之一。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-purple">極意之境首次覺醒</span>
+          <span class="badge badge-green">17號勝利</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DRAGON BALL GT ── -->
+  <div class="saga-section" data-series="gt">
+    <div class="saga-section-title">
+      <span>🌀</span> Dragon Ball GT 篇（1996–1997，非正史）
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">14</div>
+        <div class="saga-title-wrap">
+          <h3>黑星龍珠篇（Baby Saga / Black Star Balls）</h3>
+          <div class="saga-meta"><span>📅 1996年</span><span>🎯 主反派：Baby</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>皮拉夫使用黑星龍珠讓悟空變回小孩，悟空、特南克斯、潘搭乘宇宙飛船到宇宙各地尋找黑星龍珠。途中遭遇Baby——一個以復仇為目的的特塞羅人機器生命體，可寄生並操控他人身體。</p>
+        <div style="margin-top:8px"><span class="badge badge-grey">非正史</span></div>
+      </div>
+    </div>
+
+    <div class="saga-card" onclick="toggleSaga(this)">
+      <div class="saga-header">
+        <div class="saga-num">15</div>
+        <div class="saga-title-wrap">
+          <h3>超17號篇・龍篇</h3>
+          <div class="saga-meta"><span>📅 1997年</span><span>🎯 主反派：超17號・影龍</span></div>
+        </div>
+        <span class="saga-toggle">▼</span>
+      </div>
+      <div class="saga-body">
+        <p>GT後期，地獄逃脫的Dr. Gero與Dr. Myuu創造超17號，悟空被困地獄。龍篇是GT最終章，7顆影龍（一顆龍珠一隻）相繼登場，最終悟空以超賽4對抗終極影龍努巴（Syn Shenron / Omega Shenron）。</p>
+        <p>結局中悟空乘坐一條神龍飛向未知，展現開放式但充滿詩意的終章。</p>
+        <div style="margin-top:8px"><span class="badge badge-grey">非正史</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+
+<script>
+function toggleSaga(card) {
+  card.classList.toggle('open');
+}
+function showSeries(series, btn) {
+  document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.saga-section').forEach(sec => {
+    const s = sec.getAttribute('data-series') || '';
+    sec.style.display = (series === 'all' || s === series) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

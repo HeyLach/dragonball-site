@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七龍珠編年史 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .chron-hero {
+    background: linear-gradient(135deg, #1a0800 0%, #5c1a00 50%, #B84400 100%);
+    color: white;
+    text-align: center;
+    padding: 54px 24px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .chron-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,120,0,0.25) 0%, transparent 70%);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  @keyframes glow-pulse { 0%,100%{opacity:0.6}50%{opacity:1} }
+  .chron-hero h1 {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:2.4rem;font-weight:800;margin-bottom:10px;position:relative;
+  }
+  .chron-hero p { opacity:0.85;max-width:560px;margin:0 auto;position:relative; }
+  .float-icon { font-size:4rem;margin-bottom:16px;display:block;animation:float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)} }
+
+  .era-filter {
+    display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;justify-content:center;
+  }
+  .era-btn {
+    padding:7px 18px;border-radius:20px;border:2px solid var(--orange);
+    background:white;color:var(--orange-dark);cursor:pointer;font-weight:700;
+    font-size:0.85rem;font-family:inherit;transition:all 0.2s;
+  }
+  .era-btn:hover,.era-btn.active { background:var(--orange);color:white; }
+
+  .timeline-note {
+    background:linear-gradient(135deg,#fff5e8 0%,#ffeedd 100%);
+    border-radius:10px;padding:16px 20px;
+    border-left:4px solid var(--orange);margin-bottom:32px;
+    font-size:0.9rem;color:var(--text-mid);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html" class="active">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<div class="chron-hero">
+  <span class="float-icon">🐉</span>
+  <h1>七龍珠編年史</h1>
+  <p>從1984年漫畫誕生至今，橫跨40年的七龍珠歷史里程碑</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">📅 編年史</span>
+  </div>
+
+  <div class="era-filter">
+    <button class="era-btn active" onclick="filterEra('all',this)">全部時代</button>
+    <button class="era-btn" onclick="filterEra('manga',this)">原著漫畫</button>
+    <button class="era-btn" onclick="filterEra('anime',this)">動畫</button>
+    <button class="era-btn" onclick="filterEra('movie',this)">劇場版</button>
+    <button class="era-btn" onclick="filterEra('game',this)">電玩</button>
+    <button class="era-btn" onclick="filterEra('modern',this)">現代</button>
+  </div>
+
+  <div class="timeline-note">
+    📌 七龍珠（Dragon Ball）由鳥山明創作，1984年起在集英社《週刊少年Jump》連載，累計發行超過 <strong>2.6億冊</strong>，是史上最暢銷的漫畫之一。
+  </div>
+
+  <div class="timeline-wrap">
+
+    <!-- 1980s -->
+    <div class="timeline-era">1980年代 · 誕生</div>
+
+    <div class="timeline-item major" data-era="manga">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1984年</div>
+      <div class="timeline-content">
+        <h3>🟠 《週刊少年Jump》開始連載</h3>
+        <p>1984年11月20日，七龍珠第一話〈BULMA與孫悟空〉刊載於集英社《週刊少年Jump》1985年第1-2合併號。故事靈感來自中國名著《西遊記》，以集齊七顆龍珠實現願望為核心主題。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">漫畫連載</span>
+          <span class="badge badge-grey">集英社</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="anime">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1986年</div>
+      <div class="timeline-content">
+        <h3>📺 Dragon Ball 動畫開播</h3>
+        <p>1986年2月26日，由東映動畫製作的七龍珠動畫在富士電視台首播。改編自漫畫1至153話，涵蓋少年悟空的冒險故事，共153集。野澤雅子擔任孫悟空聲優，此配音延續至今。</p>
+        <div style="margin-top:8px"><span class="badge badge-blue">東映動畫</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="movie">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1986年</div>
+      <div class="timeline-content">
+        <h3>🎬 第一部劇場版上映</h3>
+        <p>《神龍の伝説》（Dragon Ball: Curse of the Blood Rubies）為七龍珠第一部劇場版電影，1986年12月20日在東映漫畫祭上映，重新詮釋漫畫第一章。</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="game">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1986年</div>
+      <div class="timeline-content">
+        <h3>🎮 第一款電玩遊戲</h3>
+        <p>《ドラゴンボール 龍王伝説》（Dragon Ball: Dragon Daihikyou）於Famicom Disk System發售，是七龍珠史上第一款電玩。由Bandai發行，改編自漫畫前期故事。</p>
+        <div style="margin-top:8px"><span class="badge badge-green">電玩歷史</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item major" data-era="anime">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1989年</div>
+      <div class="timeline-content">
+        <h3>⚡ Dragon Ball Z 動畫開播</h3>
+        <p>1989年4月26日，承接漫畫賽亞人篇的Dragon Ball Z在富士電視台首播。相較原著，Z更強調宇宙規模的戰鬥和超人類的戰鬥力，奠定後來「動作少年漫畫」的戰鬥演出風格。共291集。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">里程碑</span>
+          <span class="badge badge-blue">東映動畫</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1990s -->
+    <div class="timeline-era">1990年代 · 全盛期</div>
+
+    <div class="timeline-item" data-era="manga">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1991年</div>
+      <div class="timeline-content">
+        <h3>💛 超級賽亞人成為文化現象</h3>
+        <p>1991年，孫悟空在那美克星對戰弗利沙時第一次變身超級賽亞人（1989年漫畫，1991年動畫播出），金色頭髮的形象席捲日本及全球，帶動驚人的授權商品熱潮。「超級賽亞人」一詞在日本成為流行語。</p>
+        <div style="margin-top:8px"><span class="badge badge-gold">文化現象</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="manga">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1993年</div>
+      <div class="timeline-content">
+        <h3>🟠 Cell篇·超賽2登場</h3>
+        <p>漫畫賽魯（Cell）篇達到高潮，少年悟飯第一個達成超級賽亞人2，電視播出時引發收視率高峰。「孫悟飯」的奮起時刻至今仍是七龍珠最經典場面之一。</p>
+      </div>
+    </div>
+
+    <div class="timeline-item major" data-era="manga">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1995年</div>
+      <div class="timeline-content">
+        <h3>🏁 原著漫畫完結</h3>
+        <p>1995年5月23日，七龍珠漫畫在《週刊少年Jump》以第519話完結，連載長達10年半。全42卷（不含Z番外），總計519話。完結篇描述魔人布歐篇後日常，以武道大會作結。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">原著完結</span>
+          <span class="badge badge-grey">全42卷</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="anime">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1996年</div>
+      <div class="timeline-content">
+        <h3>🌀 Dragon Ball GT 開播</h3>
+        <p>1996年2月7日，非鳥山明原著、東映動畫原創企劃的Dragon Ball GT開播，共64集+特別篇。引入小悟空、超賽4等設定，雖為非正史（non-canon），仍有一定粉絲基礎。1997年11月完結。</p>
+        <div style="margin-top:8px"><span class="badge badge-grey">非正史</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="anime">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1996年</div>
+      <div class="timeline-content">
+        <h3>📺 Dragon Ball Z 動畫完結</h3>
+        <p>DBZ於1996年1月31日以第291集完結，播出時間長達6年11個月。完結後，東映立即接續製作GT。DBZ在台灣由中視播出，是台灣70~80後的共同記憶。</p>
+      </div>
+    </div>
+
+    <!-- 2000s -->
+    <div class="timeline-era">2000年代 · 靜默與重生</div>
+
+    <div class="timeline-item" data-era="game">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2002年</div>
+      <div class="timeline-content">
+        <h3>🎮 Dragon Ball Z: Budokai 系列</h3>
+        <p>2002年，Dimps開發的《Dragon Ball Z: Budokai》在PS2發售，開啟了現代3D格鬥七龍珠遊戲的先河。系列共三作，至今仍是粉絲心目中最優秀的七龍珠格鬥遊戲之一。</p>
+        <div style="margin-top:8px"><span class="badge badge-green">Budokai</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="game">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2004年</div>
+      <div class="timeline-content">
+        <h3>🎮 Budokai Tenkaichi 系列</h3>
+        <p>《Dragon Ball Z: Budokai Tenkaichi》（天下第一武道大會）改用360度空中戰鬥系統，可操作角色超過100位，系列三作大受好評，成為七龍珠電玩的代表作。</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="anime">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2009年</div>
+      <div class="timeline-content">
+        <h3>📺 Dragon Ball Kai 重製版</h3>
+        <p>為紀念七龍珠20週年，東映動畫推出高清重製版Dragon Ball Kai（改），大幅刪除原版拖戲場面，更貼近原著。新作音效與配樂更換，2009年4月到2011年3月播出Z篇，2014年繼續播出布歐篇。</p>
+        <div style="margin-top:8px"><span class="badge badge-orange">20週年</span></div>
+      </div>
+    </div>
+
+    <!-- 2010s -->
+    <div class="timeline-era">2010年代 · 官方回歸</div>
+
+    <div class="timeline-item major" data-era="movie">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2013年</div>
+      <div class="timeline-content">
+        <h3>🎬 《神與神》·破壞神比魯斯登場</h3>
+        <p>2013年3月30日，《Dragon Ball Z: 神と神》上映，由鳥山明親自監修劇本。破壞神比魯斯（Beerus）與天使維斯（Whis）首次登場，引入「神之力」概念。票房超越七龍珠過去所有劇場版，掀起七龍珠全球復興熱潮。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">鳥山明監修</span>
+          <span class="badge badge-purple">比魯斯首登</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="movie">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2015年</div>
+      <div class="timeline-content">
+        <h3>🎬 《復活的F》·黃金弗利沙</h3>
+        <p>2015年4月18日上映，弗利沙復活並進化為黃金弗利沙形態。悟空和貝吉塔同時進化為超級賽亞神超級賽亞人（SSGSS，即超藍）。本作日本票房達37億日圓，再創系列紀錄。</p>
+        <div style="margin-top:8px"><span class="badge badge-gold">黃金弗利沙</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item major" data-era="anime modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2015年</div>
+      <div class="timeline-content">
+        <h3>📺 Dragon Ball Super 動畫開播</h3>
+        <p>2015年7月5日，Dragon Ball Super（超）在富士電視台開播，這是自GT（1997）結束後18年來首部正史七龍珠電視動畫。故事設定於Z篇魔人布歐篇之後，引入宇宙12界、天使、全王等宏大世界觀。2018年3月以宇宙生存大賽篇完結，共131集。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">里程碑</span>
+          <span class="badge badge-blue">Super動畫</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="manga modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2015年</div>
+      <div class="timeline-content">
+        <h3>📖 Dragon Ball Super 漫畫連載</h3>
+        <p>V Jump雜誌開始連載Dragon Ball Super漫畫版，由豐太郎（とよたろう）作畫、鳥山明監修。漫畫版與動畫版劇情有所差異，引入更多獨特篇章，至今仍持續連載中。</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="game modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2015年</div>
+      <div class="timeline-content">
+        <h3>🎮 Dragon Ball Xenoverse</h3>
+        <p>《Dragon Ball Xenoverse》讓玩家可自訂角色（自製賽亞人、那美克星人等）加入戰鬥，開啟了七龍珠RPG新時代。Xenoverse 2於2016年發售，至今已在全球賣出超過1000萬套。</p>
+        <div style="margin-top:8px"><span class="badge badge-green">Xenoverse</span></div>
+      </div>
+    </div>
+
+    <!-- 2018 -->
+    <div class="timeline-item major" data-era="movie modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2018年</div>
+      <div class="timeline-content">
+        <h3>🎬 《Dragon Ball Super: Broly》</h3>
+        <p>2018年12月14日上映，布羅利（Broly）正式納入正史。本作由鳥山明重新設計布羅利角色與背景，精緻動畫製作水準獲廣大好評，日本票房41億日圓，全球票房超過1億美元，是七龍珠劇場版史上最高票房。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">系列最高票房</span>
+          <span class="badge badge-green">布羅利正史化</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="game modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2018年</div>
+      <div class="timeline-content">
+        <h3>🎮 Dragon Ball FighterZ</h3>
+        <p>由Arc System Works開發的《Dragon Ball FighterZ》，以驚人的手繪風格3D格鬥畫面震驚業界，榮獲多項電競格鬥遊戲大獎，成為七龍珠電競格鬥遊戲的里程碑。</p>
+        <div style="margin-top:8px"><span class="badge badge-blue">電競里程碑</span></div>
+      </div>
+    </div>
+
+    <!-- 2020s -->
+    <div class="timeline-era">2020年代 · 全新篇章</div>
+
+    <div class="timeline-item" data-era="game modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2020年</div>
+      <div class="timeline-content">
+        <h3>🎮 Dragon Ball Z: Kakarot</h3>
+        <p>《Dragon Ball Z: Kakarot》以RPG形式重現DBZ全篇劇情，讓玩家以悟空視角體驗整個Z系列故事。後續DLC加入Super篇章，受到玩家好評。</p>
+      </div>
+    </div>
+
+    <div class="timeline-item major" data-era="movie modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2022年</div>
+      <div class="timeline-content">
+        <h3>🎬 《Dragon Ball Super: Super Hero》</h3>
+        <p>2022年6月11日上映，首部使用3D CG動畫技術製作的七龍珠劇場版。主角轉為悟飯與比克，引入野獸悟飯（Beast Gohan）和橘色比克（Orange Piccolo）形態。</p>
+        <div style="margin-top:8px"><span class="badge badge-green">3D CG首作</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-era="game modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2024年</div>
+      <div class="timeline-content">
+        <h3>🎮 Dragon Ball: Sparking! Zero</h3>
+        <p>Budokai Tenkaichi系列正統續作，睽違17年重返，含超過180位可操作角色，進化的360度天空戰鬥系統，全球銷售超過400萬套，刷新七龍珠電玩發售首週銷售紀錄。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">2024年發售</span>
+          <span class="badge badge-green">Sparking! Zero</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item major" data-era="anime modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2024年</div>
+      <div class="timeline-content">
+        <h3>📺 Dragon Ball Daima 開播</h3>
+        <p>2024年10月11日，《Dragon Ball Daima》（大魔，意為「小小魔法」）在富士電視台開播。本作是鳥山明在世（2024年3月辭世）期間最後參與的動畫企劃，悟空再次變回小孩子並前往魔界冒險，共20集，同年完結。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-orange">鳥山明遺作</span>
+          <span class="badge badge-red">2024年</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item major" data-era="modern">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2024年3月</div>
+      <div class="timeline-content">
+        <h3>🕊️ 鳥山明辭世</h3>
+        <p>2024年3月1日，七龍珠作者鳥山明（68歲）因急性硬膜下血腫辭世。鳥山明不僅創造了七龍珠，也以Dragon Quest角色設計奠定其在日本漫畫史、電玩史上的無可取代地位。全球粉絲、藝術家與業界人士紛紛致哀悼念。</p>
+        <div style="margin-top:8px">
+          <span class="badge badge-grey">1955–2024</span>
+          <span class="badge badge-red">永遠的傳奇</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end timeline-wrap -->
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+
+<script>
+function filterEra(era, btn) {
+  document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.timeline-item').forEach(item => {
+    if (era === 'all') {
+      item.style.display = '';
+    } else {
+      const d = item.getAttribute('data-era') || '';
+      item.style.display = d.includes(era) ? '' : 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

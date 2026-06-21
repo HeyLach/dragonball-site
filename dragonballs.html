@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七顆龍珠百科 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  @keyframes db-float {
+    0%,100% { transform:translateY(0) rotate(0deg); }
+    33%  { transform:translateY(-8px) rotate(3deg); }
+    66%  { transform:translateY(-4px) rotate(-2deg); }
+  }
+  @keyframes db-glow {
+    0%,100% { box-shadow:0 6px 20px rgba(255,102,0,0.4),inset -6px -6px 12px rgba(0,0,0,0.25); }
+    50% { box-shadow:0 6px 36px rgba(255,180,0,0.7),inset -6px -6px 12px rgba(0,0,0,0.25); }
+  }
+  .db-ball {
+    animation: db-float 3.5s ease-in-out infinite, db-glow 2s ease-in-out infinite;
+  }
+  .db-card:nth-child(2) .db-ball { animation-delay:0.5s; }
+  .db-card:nth-child(3) .db-ball { animation-delay:1s; }
+  .db-card:nth-child(4) .db-ball { animation-delay:1.5s; }
+  .db-card:nth-child(5) .db-ball { animation-delay:2s; }
+  .db-card:nth-child(6) .db-ball { animation-delay:2.5s; }
+  .db-card:nth-child(7) .db-ball { animation-delay:3s; }
+
+  .dragon-section {
+    background:white;border-radius:16px;
+    box-shadow:0 4px 20px var(--shadow);
+    padding:28px;margin-bottom:36px;
+    border-top:5px solid var(--orange);
+  }
+  .dragon-section h2 {
+    font-family:'M PLUS Rounded 1c',sans-serif;
+    font-size:1.4rem;font-weight:800;color:var(--orange-dark);
+    margin-bottom:6px;
+  }
+  .dragon-meta { font-size:0.84rem;color:var(--text-light);margin-bottom:16px; }
+  .dragon-section p { font-size:0.9rem;color:var(--text-mid);line-height:1.75;margin-bottom:10px; }
+
+  .wish-list { list-style:none;padding:0; }
+  .wish-list li {
+    padding:8px 0 8px 28px;
+    border-bottom:1px solid #f5ede0;
+    font-size:0.88rem;color:var(--text-mid);
+    position:relative;line-height:1.6;
+  }
+  .wish-list li::before {
+    content:'✨';position:absolute;left:0;
+  }
+  .wish-list li:last-child { border-bottom:none; }
+
+  .ball-stars {
+    display:flex;gap:3px;justify-content:center;margin-bottom:6px;
+    font-size:0.55rem;letter-spacing:1px;
+  }
+  .ball-star { color:#CC0000;font-size:0.8rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html" class="active">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#1a0800,#B84400 55%,#FF6600);">
+  <div style="font-size:2.5rem;margin-bottom:10px">🟠</div>
+  <h1>七顆龍珠百科</h1>
+  <p>集齊七顆龍珠，召喚神龍，許下一個願望——龍珠傳說的完整解說</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">🟠 七顆龍珠百科</span>
+  </div>
+
+  <div class="highlight-box">
+    <p>🟠 龍珠是故事的核心道具——七顆球體，各帶1至7顆星形圖案以示區別，集齊七顆後召喚神龍，可實現一個（或多個）願望。願望實現後龍珠散落四方，需等待一年後才能再次使用。</p>
+  </div>
+
+  <!-- ── EARTH DRAGON BALLS ── -->
+  <h2 class="section-title">🌏 地球龍珠（七星球）</h2>
+
+  <div class="db-grid">
+    <div class="db-card">
+      <div class="db-ball">
+        <div class="ball-stars"><span class="ball-star">★</span></div>
+      </div>
+      <h3>一星球</h3>
+      <p>七顆龍珠中帶一顆星的球，故事中出現頻率最高。在悟空的外公孫悟飯手中，悟空奶奶傳給悟空。龍珠爺爺傳下的家傳之寶，是整個故事的起點。</p>
+    </div>
+
+    <div class="db-card">
+      <div class="db-ball">
+        <div class="ball-stars"><span class="ball-star">★</span><span class="ball-star">★</span></div>
+      </div>
+      <h3>二星球</h3>
+      <p>帶有兩顆星的龍珠。布瑪首先尋找的目標之一，其家中擁有探測地球龍珠的「龍珠雷達」——由布瑪天才般的科學能力製造。</p>
+    </div>
+
+    <div class="db-card">
+      <div class="db-ball">
+        <div class="db-ball" style="animation:none;box-shadow:none;background:none;width:auto;height:auto;">
+          <div class="ball-stars"><span class="ball-star">★</span><span class="ball-star">★</span><span class="ball-star">★</span></div>
+        </div>
+      </div>
+      <h3>三星球</h3>
+      <p>三顆星的龍珠，常在對手手中出現。龍珠散落的位置遍布地球各地、深海、山頂等難以到達的場所，尋找本身便是一大冒險。</p>
+    </div>
+
+    <div class="db-card">
+      <div class="db-ball">
+        <div class="ball-stars">
+          <span class="ball-star">★</span><span class="ball-star">★</span>
+          <span class="ball-star">★</span><span class="ball-star">★</span>
+        </div>
+      </div>
+      <h3>四星球（四星球！）</h3>
+      <p>七龍珠中最具代表性的一顆——帶四顆星，是孫悟空的外公留給他的遺物，世界上唯一帶有感情記憶的龍珠。在圖案設計上，四星球（四星球）是七龍珠系列的標誌符號。</p>
+      <div style="margin-top:8px"><span class="badge badge-orange">代表性龍珠</span></div>
+    </div>
+
+    <div class="db-card">
+      <div class="db-ball">
+        <div class="ball-stars">
+          <span class="ball-star">★</span><span class="ball-star">★</span><span class="ball-star">★</span>
+          <span class="ball-star">★</span><span class="ball-star">★</span>
+        </div>
+      </div>
+      <h3>五星球</h3>
+      <p>五顆星龍珠，七顆中靠後的數字。每一次天下第一武道大賽或重要篇章結束後，龍珠散開，再次展開尋球冒險。</p>
+    </div>
+
+    <div class="db-card">
+      <div class="db-ball">
+        <div class="ball-stars">
+          <span class="ball-star">★</span><span class="ball-star">★</span><span class="ball-star">★</span>
+          <span class="ball-star">★</span><span class="ball-star">★</span><span class="ball-star">★</span>
+        </div>
+      </div>
+      <h3>六星球</h3>
+      <p>六顆星的龍珠，最後兩顆之一。全七顆集齊呼喚神龍的儀式，是系列中最令人期待的場景。神龍（Shenron）自龍珠中現身的畫面是七龍珠最具代表性的視覺形象。</p>
+    </div>
+
+    <div class="db-card">
+      <div class="db-ball">
+        <div class="ball-stars">
+          <span class="ball-star">★</span><span class="ball-star">★</span><span class="ball-star">★</span>
+          <span class="ball-star">★</span><span class="ball-star">★</span><span class="ball-star">★</span>
+          <span class="ball-star">★</span>
+        </div>
+      </div>
+      <h3>七星球</h3>
+      <p>最後一顆，七星球！集齊所有七顆後，召喚地球守護神龍（神龍 / Shenron）。神龍可實現一個願望，能力受限於創造龍珠的神明的能力（地球神仙）。</p>
+      <div style="margin-top:8px"><span class="badge badge-gold">集齊完成</span></div>
+    </div>
+  </div>
+
+  <!-- ── SHENRON / WISHES ── -->
+  <div class="dragon-section">
+    <h2>🐉 地球神龍（神龍 / Shenron）</h2>
+    <div class="dragon-meta">📍 地球龍珠召喚 · 創造者：地球神仙→比克</div>
+    <p>神龍是地球龍珠的守護神，外觀為巨大的東方青龍，通體墨綠，眼睛血紅。召喚咒語為<strong>「出來吧！神龍！」（出てこい！シェンロン！）</strong>。</p>
+    <p>神龍的能力受限於創造龍珠的神的能力——一開始的地球神仙能力有限，後來比克（地球神）成為守護神後能力大幅提升。以下是七龍珠故事中使用過的部分著名願望：</p>
+    <ul class="wish-list">
+      <li>復活被弗利沙殺死的那美克星人（那美克星篇）</li>
+      <li>將所有被賽魯復活的死者送回地獄（Cell篇後）</li>
+      <li>復活被弗利沙殺死的地球人——需要神龍連續許三個願望（Cell篇）</li>
+      <li>抹去地球人對魔人布歐存在的記憶（布歐篇後）</li>
+      <li>讓比克解放潛力（Super Hero 2022）</li>
+      <li>復活宇宙生存大賽中消失的宇宙（Super宇宙生存大賽篇）</li>
+    </ul>
+  </div>
+
+  <!-- ── NAMEK DRAGON BALLS ── -->
+  <h2 class="section-title">💚 那美克星龍珠（那美克星七星球）</h2>
+  <div class="dragon-section" style="border-top-color:#226633;">
+    <h2>🟢 那美克星神龍（波鲁納伽 / Porunga）</h2>
+    <div class="dragon-meta">📍 那美克星龍珠召喚 · 那美克星語召喚</div>
+    <p>那美克星龍珠比地球龍珠更大（如房屋大小），神龍Porunga外觀更加威武，造型近似西方龍，全身深緑色。<strong>最多可實現三個願望</strong>（地球神龍只有一個），且能復活單一個人多次，限制較地球神龍少。</p>
+    <p>那美克星語召喚咒語由比克的記憶提供，須以那美克星語許願。在那美克星篇，戰士們不遠萬里前往那美克星正是為了使用這套威力更強的龍珠。</p>
+    <ul class="wish-list">
+      <li>復活所有被弗利沙殺死的那美克星人（那美克星篇）</li>
+      <li>將所有那美克星人傳送到另一顆星球</li>
+      <li>復活被Babidi殺死的地球人（布歐篇）</li>
+      <li>復活比克並將其傳送到天下第一武道大會（布歐篇）</li>
+    </ul>
+    <div style="margin-top:12px">
+      <span class="badge badge-green">三個願望</span>
+      <span class="badge badge-orange">更少限制</span>
+    </div>
+  </div>
+
+  <!-- ── SUPER DRAGON BALLS ── -->
+  <h2 class="section-title">✨ 超龍珠（Super Dragon Balls）</h2>
+  <div class="dragon-section" style="border-top-color:#cc9900;">
+    <h2>🌟 超級神龍（Super Shenron）</h2>
+    <div class="dragon-meta">📍 Dragon Ball Super登場 · 可實現任何願望</div>
+    <p>Dragon Ball Super中引入的終極龍珠，大小如行星，散落在第6與第7宇宙之間的宇宙空間。超龍珠是「無願不能實現」的終極版本，甚至能復活整個宇宙。</p>
+    <p>召喚的超級神龍（Super Shenron）體型如星系，需以「神之語言」（古代天使語）許願。宇宙生存大賽中，最後一位倖存者17號使用超龍珠許願「復活所有被消滅的宇宙」，拯救了7個宇宙。</p>
+    <ul class="wish-list">
+      <li>使任意宇宙的力量完全復原（宇宙6號篇）</li>
+      <li>復活宇宙生存大賽中消滅的7個宇宙（宇宙生存大賽篇）</li>
+      <li>理論上可實現任何願望，無上限</li>
+    </ul>
+    <div style="margin-top:12px">
+      <span class="badge badge-gold">無限願望</span>
+      <span class="badge badge-purple">行星大小</span>
+      <span class="badge badge-orange">Super篇登場</span>
+    </div>
+  </div>
+
+  <!-- ── BLACK STAR / GT ── -->
+  <h2 class="section-title">⭐ 黑星龍珠（GT/非正史）</h2>
+  <div class="dragon-section" style="border-top-color:#444;">
+    <h2>⚫ 黑星神龍與影龍</h2>
+    <div class="dragon-meta">📍 Dragon Ball GT限定 · 非正史設定</div>
+    <p>GT中，比克大魔王時代的黑星龍珠被皮拉夫使用後讓悟空變回小孩。黑星龍珠散落宇宙各地，若一年內不集齊地球將爆炸，促使悟空等人展開宇宙冒險。</p>
+    <p>GT最終章，每次使用龍珠許願都會在龍珠中積累「負邪氣」，最終七顆龍珠各自生成一隻「影龍」（Shadow Dragon），成為GT的最終反派。七隻影龍各具特色，最強的是合體影龍「歐米伽神龍（Omega Shenron）」。</p>
+    <div style="margin-top:12px">
+      <span class="badge badge-grey">非正史</span>
+      <span class="badge badge-red">GT限定</span>
+    </div>
+  </div>
+
+  <!-- ── DRAGON RADAR ── -->
+  <h2 class="section-title">📡 龍珠雷達</h2>
+  <div class="dragon-section" style="border-top-color:#2266bb;">
+    <h2>🔵 龍珠雷達（Dragon Radar）</h2>
+    <div class="dragon-meta">發明者：布瑪 · 可偵測地球七顆龍珠</div>
+    <p>布瑪在15歲時自行研發的圓形偵測裝置，能夠偵測地球龍珠所在位置並以螢幕顯示地圖座標，是整個七龍珠故事能夠進行的關鍵道具。</p>
+    <p>外觀為藍色圓形手持裝置，螢幕上以小圓點顯示龍珠位置。注意：龍珠雷達只能偵測地球龍珠，無法偵測那美克星龍珠或超龍珠（後兩者需要其他方法尋找）。</p>
+    <div style="margin-top:12px">
+      <span class="badge badge-blue">布瑪發明</span>
+      <span class="badge badge-orange">故事核心道具</span>
+    </div>
+  </div>
+
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+</body>
+</html>

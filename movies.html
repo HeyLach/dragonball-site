@@ -20,8 +20,12 @@
   }
   .movie-card:hover { transform:translateY(-4px);box-shadow:0 10px 28px var(--shadow-deep); }
   .movie-banner {
-    height:100px;display:flex;align-items:center;justify-content:center;
+    height:180px;display:flex;align-items:center;justify-content:center;
     font-size:3rem;position:relative;overflow:hidden;
+  }
+  .movie-banner img {
+    width:100%;height:100%;object-fit:cover;object-position:top center;
+    display:block;
   }
   .movie-body { padding:18px;flex:1; }
   .movie-year { font-size:0.75rem;font-weight:800;color:var(--orange);margin-bottom:4px; }
@@ -93,7 +97,7 @@
   <div class="movie-grid">
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#8B4513,#D2691E)">🐉</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#8B4513,#D2691E)"><img src="images/movies/blood_rubies.png" alt="神龍の伝説"></div>
       <div class="movie-body">
         <div class="movie-year">1986年12月</div>
         <h3>神龍の伝説（Curse of the Blood Rubies）</h3>
@@ -106,7 +110,7 @@
     </div>
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3a6a,#2255aa)">🌙</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3a6a,#2255aa)"><img src="images/movies/sleeping_princess.png" alt="魔神城の眠り姫"></div>
       <div class="movie-body">
         <div class="movie-year">1987年7月</div>
         <h3>魔神城の眠り姫（Sleeping Princess in Devil's Castle）</h3>
@@ -118,7 +122,7 @@
     </div>
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#3a1a6a,#7733cc)">🐾</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#3a1a6a,#7733cc)"><img src="images/movies/mystical_adventure.png" alt="摩訶不思議大冒険"></div>
       <div class="movie-body">
         <div class="movie-year">1988年7月</div>
         <h3>摩訶不思議大冒険（Mystical Adventure）</h3>
@@ -136,7 +140,7 @@
   <div class="movie-grid">
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#0a0a2a,#1a1a5a)">🌑</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#0a0a2a,#1a1a5a)"><img src="images/movies/dead_zone.png" alt="Dead Zone"></div>
       <div class="movie-body">
         <div class="movie-year">1989年7月</div>
         <h3>Dead Zone（オラの悟飯をかえせ！！）</h3>
@@ -148,7 +152,7 @@
     </div>
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0030,#440099)">💜</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0030,#440099)"><img src="images/movies/worlds_strongest.png" alt="世界一強い男たち"></div>
       <div class="movie-body">
         <div class="movie-year">1990年3月</div>
         <h3>世界一強い男たち（The World's Strongest）</h3>
@@ -160,7 +164,7 @@
     </div>
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3300,#336600)">🌿</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3300,#336600)"><img src="images/movies/tree_of_might.png" alt="地球まるごと超決戦"></div>
       <div class="movie-body">
         <div class="movie-year">1990年7月</div>
         <h3>地球まるごと超決戦（The Tree of Might）</h3>
@@ -172,7 +176,7 @@
     </div>
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0a00,#552200)">🔥</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0a00,#552200)"><img src="images/movies/super_android13.png" alt="超戦士撃破！！"></div>
       <div class="movie-body">
         <div class="movie-year">1991年3月</div>
         <h3>超戦士撃破！！勝つのはオレだ（Super Android 13）</h3>
@@ -184,7 +188,7 @@
     </div>
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#111133,#223388)">⚡</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#111133,#223388)"><img src="images/movies/bojack.png" alt="燃えつきろ！！"></div>
       <div class="movie-body">
         <div class="movie-year">1993年3月</div>
         <h3>燃えつきろ！！熱戦・烈戦・超激戦（Bojack Unbound）</h3>
@@ -196,7 +200,7 @@
     </div>
 
     <div class="movie-card">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0020,#5500aa)">🟢</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a0020,#5500aa)"><img src="images/movies/broly_legendary.png" alt="極限バトル！！"></div>
       <div class="movie-body">
         <div class="movie-year">1993年7月</div>
         <h3>極限バトル！！三大超サイヤ人（Broly – The Legendary Super Saiyan）</h3>
@@ -215,7 +219,7 @@
   <div class="movie-grid">
 
     <div class="movie-card" style="border:2px solid var(--orange);">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#400000,#CC0000)">😼</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#400000,#CC0000)"><img src="images/movies/battle_of_gods.jpg" alt="神と神"></div>
       <div class="movie-body">
         <div class="movie-year">2013年3月</div>
         <h3>ドラゴンボールZ 神と神（Battle of Gods）</h3>
@@ -229,7 +233,7 @@
     </div>
 
     <div class="movie-card" style="border:2px solid var(--orange);">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#111,#444)">✨</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#111,#444)"><img src="images/movies/resurrection_f.jpg" alt="復活の「F」"></div>
       <div class="movie-body">
         <div class="movie-year">2015年4月</div>
         <h3>ドラゴンボールZ 復活の「F」（Resurrection 'F'）</h3>
@@ -243,7 +247,7 @@
     </div>
 
     <div class="movie-card" style="border:2px solid var(--orange);">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#001a3a,#003388)">🌌</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#001a3a,#003388)"><img src="images/movies/dbs_broly.jpg" alt="Dragon Ball Super: Broly"></div>
       <div class="movie-body">
         <div class="movie-year">2018年12月</div>
         <h3>Dragon Ball Super: Broly</h3>
@@ -257,7 +261,7 @@
     </div>
 
     <div class="movie-card" style="border:2px solid var(--orange);">
-      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3300,#44aa00)">🦁</div>
+      <div class="movie-banner" style="background:linear-gradient(135deg,#1a3300,#44aa00)"><img src="images/movies/super_hero.jpg" alt="Dragon Ball Super: Super Hero"></div>
       <div class="movie-body">
         <div class="movie-year">2022年6月</div>
         <h3>Dragon Ball Super: Super Hero</h3>

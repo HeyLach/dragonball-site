@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>超武鬥傳 · 七龍珠の戰鬥聖典</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .butoden-header {
+    background: linear-gradient(135deg, #2c1000 0%, #8B4513 50%, #FF6600 100%);
+    padding: 60px 24px;
+    text-align: center;
+    color: white;
+  }
+
+  .butoden-header h1 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+
+  .butoden-header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .game-series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .butoden-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid var(--orange);
+  }
+
+  .butoden-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px var(--shadow-deep);
+  }
+
+  .butoden-card-header {
+    background: linear-gradient(135deg, var(--orange-deep) 0%, var(--orange-dark) 100%);
+    color: white;
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .butoden-card-header h2 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .butoden-card-year {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 700;
+  }
+
+  .butoden-card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-section {
+    margin-bottom: 16px;
+  }
+
+  .card-section h3 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--orange-dark);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+
+  .card-section p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .card-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .stat-badge {
+    display: inline-block;
+    background: #f0e8e0;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--orange-dark);
+  }
+
+  .character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .character-tile {
+    background: #f8f0e8;
+    border: 2px solid var(--orange-light);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    font-size: 2rem;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .character-tile:hover {
+    background: var(--orange-light);
+    transform: scale(1.05);
+  }
+
+  .character-name {
+    font-size: 0.7rem;
+    color: var(--text-mid);
+    margin-top: 6px;
+    font-weight: 700;
+    word-break: break-word;
+  }
+
+  .hidden-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--gold);
+    color: #2c1000;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 800;
+  }
+
+  .youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+  }
+
+  .video-frame {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px var(--shadow);
+    background: #000;
+  }
+
+  .video-frame iframe {
+    width: 100%;
+    height: 280px;
+    border: none;
+    display: block;
+  }
+
+  .video-label {
+    background: white;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: var(--text);
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dev-info {
+    background: linear-gradient(135deg, #fff5e8 0%, #ffeedd 100%);
+    border-left: 5px solid var(--orange);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+
+  .dev-info h3 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--orange-dark);
+    margin-bottom: 8px;
+  }
+
+  .dev-info p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    margin: 4px 0;
+    line-height: 1.6;
+  }
+
+  .dev-info strong {
+    color: var(--text);
+  }
+
+  .source-note {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">七龍珠の戰鬥聖典<div class="logo-sub">Dragon Ball 資訊館</div></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 首頁</a>
+      <a href="chronicle.html">📅 編年史</a>
+      <a href="characters.html">👥 人物</a>
+      <a href="saga.html">⚔️ 故事篇章</a>
+      <a href="transformations.html">⚡ 變身型態</a>
+      <a href="dragonballs.html">🟠 龍珠百科</a>
+      <a href="movies.html">🎬 劇場版</a>
+      <a href="games.html">🎮 電玩</a>
+      <a href="butoden.html" class="active">⚔️ 超武鬥傳</a>
+    </nav>
+  </div>
+</header>
+
+<div class="butoden-header">
+  <h1>⚔️ 超武鬥傳三部曲</h1>
+  <p>Dragon Ball Z: Super Butōden Series<br>
+  1993–1994年 SNES 格鬥傳奇，七龍珠遊戲歷史的開篇之作</p>
+</div>
+
+<div class="content-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 首頁</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-cur">⚔️ 超武鬥傳</span>
+  </div>
+
+  <div class="highlight-box">
+    <p>🎮 <strong>超武鬥傳（Super Butōden）</strong> 是七龍珠遊戲史上的里程碑——Tose 開發、Bandai 發行的3部 SNES 格鬥遊戲，共推出13個可操作角色、涵蓋全DBZ故事線、累計銷售超過 <strong>330 萬套</strong>。首次在遊戲中加入角色配音，以動感的 16-bit 格鬥體驗重現原作戰鬥的快感。</p>
+  </div>
+
+  <!-- ── 三部曲卡片 ── -->
+  <div class="game-series-grid">
+
+    <!-- 超武鬥傳 1 -->
+    <div class="butoden-card">
+      <div class="butoden-card-header">
+        <h2>超武鬥傳 I</h2>
+        <div class="butoden-card-year">1993年3月20日 (日本)</div>
+      </div>
+      <div class="butoden-card-body">
+
+        <div class="card-section">
+          <h3>📋 基本資訊</h3>
+          <p><strong>開發商：</strong> Tose</p>
+          <p><strong>發行商：</strong> Bandai</p>
+          <p><strong>平台：</strong> SNES (Super Famicom)</p>
+          <p><strong>發售地區：</strong> 日本 1993.3.20 / 歐洲 1993.11.30 / 北美 2018.9.28*</p>
+          <div class="card-stats">
+            <span class="stat-badge">日本銷售 130萬</span>
+            <span class="stat-badge">全球 140萬+</span>
+          </div>
+        </div>
+
+        <div class="card-section">
+          <h3>👨‍💼 製作團隊</h3>
+          <p><strong>製作人：</strong> Toshihiro Suzuki</p>
+          <p><strong>導演：</strong> Akihumi Kubota, Shinsaku Shimada</p>
+          <p><strong>作曲：</strong> Kenji Yamamoto</p>
+        </div>
+
+        <div class="card-section">
+          <h3>🎮 遊戲特色</h3>
+          <p>• 七龍珠首款全面3D格鬥遊戲<br>
+          • 6鍵可自訂控制系統<br>
+          • 分割螢幕對戰（保留雙方視野）<br>
+          • 首次遊戲內角色配音</p>
+        </div>
+
+        <div class="card-section">
+          <h3>🗡️ 可玩角色 (10+1)</h3>
+          <div class="character-grid">
+            <div class="character-tile">🧑 悟空</div>
+            <div class="character-tile">⚡ 超悟空</div>
+            <div class="character-tile">🔥 比克</div>
+            <div class="character-tile">💜 貝吉塔</div>
+            <div class="character-tile">⭐ 超貝吉塔</div>
+            <div class="character-tile">👽 弗利沙</div>
+            <div class="character-tile">🐲 賽魯</div>
+            <div class="character-tile">❌ 完全體賽魯</div>
+            <div class="character-tile">🤖 人造人18號</div>
+            <div class="character-tile">🦾 人造人16號</div>
+            <div class="character-tile">🧪 人造人20號<br><span class="character-name">(蓋羅博士)</span></div>
+            <div class="character-tile" style="position: relative;">
+              👱 特蘭克斯
+              <span class="hidden-badge">隱藏</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="source-note">
+          *北美版於2018年作為《Dragon Ball FighterZ》Nintendo Switch預購獎勵發售<br>
+          資料來源：Wikipedia, Famitsu, MobyGames
+        </div>
+      </div>
+    </div>
+
+    <!-- 超武鬥傳 2 -->
+    <div class="butoden-card">
+      <div class="butoden-card-header">
+        <h2>超武鬥傳 II</h2>
+        <div class="butoden-card-year">1993年12月17日 (日本)</div>
+      </div>
+      <div class="butoden-card-body">
+
+        <div class="card-section">
+          <h3>📋 基本資訊</h3>
+          <p><strong>開發商：</strong> Tose</p>
+          <p><strong>發行商：</strong> Bandai</p>
+          <p><strong>平台：</strong> SNES (Super Famicom)</p>
+          <p><strong>發售地區：</strong> 日本 1993.12.17 / 歐洲 1994.6 / 北美 2015.10.20*</p>
+          <div class="card-stats">
+            <span class="stat-badge">日本銷售 115萬</span>
+            <span class="stat-badge">全球 120萬+</span>
+          </div>
+        </div>
+
+        <div class="card-section">
+          <h3>👨‍💼 製作團隊</h3>
+          <p><strong>製作人：</strong> Toshihiro Suzuki</p>
+          <p><strong>導演：</strong> Shinsaku Shimada</p>
+          <p><strong>作曲：</strong> Kenji Yamamoto, Akihito Suita, Yuki Sabakuma</p>
+        </div>
+
+        <div class="card-section">
+          <h3>🎮 遊戲特色</h3>
+          <p>• Cell篇後的新劇情<br>
+          • 流星連段系統<br>
+          • 水面竞技場<br>
+          • 氣值充填系統升級</p>
+        </div>
+
+        <div class="card-section">
+          <h3>🗡️ 可玩角色 (8+2隱藏)</h3>
+          <div class="character-grid">
+            <div class="character-tile">💜 貝吉塔</div>
+            <div class="character-tile">👨 悟飯</div>
+            <div class="character-tile">👱 特蘭克斯</div>
+            <div class="character-tile">🔥 比克</div>
+            <div class="character-tile">🐲 賽魯</div>
+            <div class="character-tile">🦗 賽魯Jr</div>
+            <div class="character-tile">💪 波傑克</div>
+            <div class="character-tile">💕 贊吉亞</div>
+            <div class="character-tile" style="position: relative;">
+              🧑 悟空
+              <span class="hidden-badge">隱藏</span>
+            </div>
+            <div class="character-tile" style="position: relative;">
+              💔 布羅利
+              <span class="hidden-badge">隱藏</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-section">
+          <h3>⚠️ 特殊設定</h3>
+          <p>日本版中悟空為隱藏角色（需密技解鎖），是系列中唯一的設定。遊戲融合劇場版《布羅利 傳說中的超級戰士》和《波傑克 不敗戰士》的角色與故事要素。</p>
+        </div>
+
+        <div class="source-note">
+          *北美版於2015年作為《Dragon Ball Z Extreme Butōden》預購獎勵發售<br>
+          資料來源：Wikipedia, GameFAQs, Famitsu
+        </div>
+      </div>
+    </div>
+
+    <!-- 超武鬥傳 3 -->
+    <div class="butoden-card">
+      <div class="butoden-card-header">
+        <h2>超武鬥傳 III</h2>
+        <div class="butoden-card-year">1994年9月29日 (日本)</div>
+      </div>
+      <div class="butoden-card-body">
+
+        <div class="card-section">
+          <h3>📋 基本資訊</h3>
+          <p><strong>開發商：</strong> Tose (15人團隊，歷時6個月開發)</p>
+          <p><strong>發行商：</strong> Bandai</p>
+          <p><strong>平台：</strong> SNES (Super Famicom)</p>
+          <p><strong>發售地區：</strong> 日本 1994.9.29 / 歐洲 1995.1.25 (限法義西)</p>
+          <div class="card-stats">
+            <span class="stat-badge">日本銷售 91萬</span>
+            <span class="stat-badge">全球 95萬+</span>
+          </div>
+        </div>
+
+        <div class="card-section">
+          <h3>👨‍💼 製作團隊</h3>
+          <p><strong>製作人：</strong> Toshihiro Suzuki / 助理：Takeo Isogai</p>
+          <p><strong>作曲：</strong> Kenji Yamamoto, Akihito Suita, Shinji Amagishi</p>
+          <p><strong>官方攻略本：</strong> Shueisha 1994.11.7 發行</p>
+        </div>
+
+        <div class="card-section">
+          <h3>🎮 遊戲特色</h3>
+          <p>• 布歐篇故事背景<br>
+          • 超大型角色精靈（Dabura/魔人布歐）<br>
+          • VS模式 + Tournament tournament</p>
+        </div>
+
+        <div class="card-section">
+          <h3>🗡️ 可玩角色 (9+1隱藏)</h3>
+          <div class="character-grid">
+            <div class="character-tile">🧑 悟空</div>
+            <div class="character-tile">👦 悟天</div>
+            <div class="character-tile">👱 特蘭克斯</div>
+            <div class="character-tile">👱‍♀️ 特蘭克斯(幼)</div>
+            <div class="character-tile">💜 魔人貝吉塔</div>
+            <div class="character-tile">👨 悟飯</div>
+            <div class="character-tile">👑 界王神</div>
+            <div class="character-tile">🎀 魔人布歐</div>
+            <div class="character-tile">😈 達普拉</div>
+            <div class="character-tile">🤖 人造人18號</div>
+            <div class="character-tile" style="position: relative;">
+              ⚡ 超特蘭克斯
+              <span class="hidden-badge">隱藏</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-section">
+          <h3>📊 評價與銷售</h3>
+          <p><strong>評論評分：</strong> 70–91分 (普遍正面)<br>
+          <strong>主要讚譽：</strong> 視覺、動畫、音樂、操控性<br>
+          <strong>主要批評：</strong> 缺少故事模式</p>
+        </div>
+
+        <div class="source-note">
+          官方音樂專輯發行於1994年10月21日 (組曲版)</br>
+          資料來源：Wikipedia, Famitsu Archives
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── 開發歷史 ── -->
+  <h2 class="section-title">📖 開發與傳奇</h2>
+
+  <div class="dev-info">
+    <h3>⚡ 一年三部曲的奇跡</h3>
+    <p>超武鬥傳 I 和 II 在同一年 (1993年) 推出，足足相隔 9 個月。第一部於3月發售、三個月內售出 130 萬套後，Tose 立即啟動第二部開發，於12月上市。第三部則於次年推出，完成「1993–1994 三年內三部大作」的壯舉。</p>
+  </div>
+
+  <div class="dev-info">
+    <h3>🎬 與 Toei 動畫的合作</h3>
+    <p>超武鬥傳 II 的水面競技場由 Toei Animation（東映動畫）特別委製，展示了當時日本遊戲製作與動畫界的緊密合作。</p>
+  </div>
+
+  <div class="dev-info">
+    <h3>🏆 市場成就</h3>
+    <p>• <strong>首週銷售：</strong>超武鬥傳 I 創下日本 SNES 遊戲歷史首週銷售紀錄<br>
+    • <strong>年度排名：</strong>Part I 和 II 分別於 1993 年 3 月與 12 月登頂 Famitsu 月度銷售排行<br>
+    • <strong>累計銷售：</strong>三部作品合計超 330 萬套全球銷售，在七龍珠遊戲史上名列前茅</p>
+  </div>
+
+  <!-- ── YouTube 內容集錦 ── -->
+  <h2 class="section-title">📺 遊戲影片精選</h2>
+
+  <h3 style="color: var(--orange-dark); margin-top: 24px; margin-bottom: 20px; font-size: 1.2rem; font-weight: 800; font-family: 'M PLUS Rounded 1c', sans-serif;">🎮 完整遊戲通關</h3>
+  <div class="youtube-grid">
+    <div class="video-frame">
+      <div class="video-label">超武鬥傳 I — Longplay (SNES 1993)</div>
+      <iframe src="https://www.youtube.com/embed/hd9WpIw0m4A" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="video-frame">
+      <div class="video-label">超武鬥傳 II — 全結局 Longplay</div>
+      <iframe src="https://www.youtube.com/embed/OfUMkjT5rdw" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="video-frame">
+      <div class="video-label">超武鬥傳 II — 最高難度通關 (SNES 1993)</div>
+      <iframe src="https://www.youtube.com/embed/Cqp5C5POeCw" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <h3 style="color: var(--orange-dark); margin-top: 32px; margin-bottom: 20px; font-size: 1.2rem; font-weight: 800; font-family: 'M PLUS Rounded 1c', sans-serif;">🎵 原聲音樂與音效</h3>
+  <div class="youtube-grid">
+    <div class="video-frame">
+      <div class="video-label">超武鬥傳 I 完整 OST</div>
+      <iframe src="https://www.youtube.com/embed/vi3HpzX1uLI" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="video-frame">
+      <div class="video-label">超武鬥傳 III 完整遊戲配樂</div>
+      <iframe src="https://www.youtube.com/playlist?list=PLhPt7n-ALrSAY9E5TZO50PSIAXJHujbZs" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <h3 style="color: var(--orange-dark); margin-top: 32px; margin-bottom: 20px; font-size: 1.2rem; font-weight: 800; font-family: 'M PLUS Rounded 1c', sans-serif;">🎯 密技與隱藏內容</h3>
+  <div class="highlight-box gold">
+    <p><strong>隱藏角色解鎖密技：</strong><br>
+    • 超武鬥傳 I：超級特蘭克斯／超級悟飯等需特定操作解鎖<br>
+    • 超武鬥傳 II：悟空（日本版隱藏）、布羅利 — 使用密技代碼<br>
+    • 超武鬥傳 III：超級未來特蘭克斯 — 向上 X 向下 B L Y R A (開場時輸入)<br><br>
+    <strong>特殊設定：</strong><br>
+    超武鬥傳 I 的獨特設計讓玩家即使全敗，故事仍會推進，呈現「IF 世界線」的全敗結局（特別是貝吉塔篇）。</p>
+  </div>
+
+  <!-- ── 遊戲對比表 ── -->
+  <h2 class="section-title">⚖️ 三代遊戲對比</h2>
+
+  <div style="overflow-x: auto; margin: 24px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+      <thead>
+        <tr style="background: var(--orange); color: white;">
+          <th style="padding: 12px; text-align: left; font-weight: 800;">項目</th>
+          <th style="padding: 12px; text-align: center; font-weight: 800;">第 I 代</th>
+          <th style="padding: 12px; text-align: center; font-weight: 800;">第 II 代</th>
+          <th style="padding: 12px; text-align: center; font-weight: 800;">第 III 代</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #f8f0e8; border-bottom: 1px solid #eee;">
+          <td style="padding: 12px;"><strong>發售日期</strong></td>
+          <td style="padding: 12px; text-align: center;">1993.3.20</td>
+          <td style="padding: 12px; text-align: center;">1993.12.17</td>
+          <td style="padding: 12px; text-align: center;">1994.9.29</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 12px;"><strong>可玩角色數</strong></td>
+          <td style="padding: 12px; text-align: center;">10 (+1隱藏)</td>
+          <td style="padding: 12px; text-align: center;">8 (+2隱藏)</td>
+          <td style="padding: 12px; text-align: center;">9 (+1隱藏)</td>
+        </tr>
+        <tr style="background: #f8f0e8; border-bottom: 1px solid #eee;">
+          <td style="padding: 12px;"><strong>故事模式</strong></td>
+          <td style="padding: 12px; text-align: center;">✓ Cell篇</td>
+          <td style="padding: 12px; text-align: center;">✓ Cell後</td>
+          <td style="padding: 12px; text-align: center;">✗ (VS/Tournament)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 12px;"><strong>日本銷售量</strong></td>
+          <td style="padding: 12px; text-align: center;">130 萬</td>
+          <td style="padding: 12px; text-align: center;">115 萬</td>
+          <td style="padding: 12px; text-align: center;">91 萬</td>
+        </tr>
+        <tr style="background: #f8f0e8; border-bottom: 1px solid #eee;">
+          <td style="padding: 12px;"><strong>特色系統</strong></td>
+          <td style="padding: 12px; text-align: center;">分割螢幕/配音</td>
+          <td style="padding: 12px; text-align: center;">流星連段/水面</td>
+          <td style="padding: 12px; text-align: center;">超大型角色</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eee;">
+          <td style="padding: 12px;"><strong>評論評分</strong></td>
+          <td style="padding: 12px; text-align: center;">大多正面</td>
+          <td style="padding: 12px; text-align: center;">92–93/100</td>
+          <td style="padding: 12px; text-align: center;">70–91分</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight-box">
+    <p>💡 <strong>常見問題：</strong><br>
+    <strong>Q: 為什麼只有日本版發售？</strong> 歐美地區當時尚未普遍接觸七龍珠動畫，直到2018年才通過FighterZ特典發行北美版。<br><br>
+    <strong>Q: 超武鬥傳與後來的Budokai系列有何不同？</strong> 超武鬥傳為SNES獨佔、採用分割螢幕設計；Budokai系列(2002年起)為PS2/GameCube，採用3D對戰場景，遊戲性更為現代化。</p>
+  </div>
+
+  <div class="highlight-box gold">
+    <p>📚 <strong>參考資料與來源：</strong><br>
+    • <a href="https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Super_But%C5%8Dden" target="_blank" style="color: var(--orange-dark); text-decoration: underline;">Wikipedia - Dragon Ball Z: Super Butōden</a><br>
+    • <a href="https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Super_But%C5%8Dden_2" target="_blank" style="color: var(--orange-dark); text-decoration: underline;">Wikipedia - Dragon Ball Z: Super Butōden 2</a><br>
+    • <a href="https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Super_But%C5%8Dden_3" target="_blank" style="color: var(--orange-dark); text-decoration: underline;">Wikipedia - Dragon Ball Z: Super Butōden 3</a><br>
+    • Famitsu 月度銷售排行檔案<br>
+    • MobyGames, GameFAQs, TCRF (The Cutting Room Floor)<br>
+    • YouTube 原創頻道與遊戲影片資料庫</p>
+  </div>
+
+</div><!-- end content-wrap -->
+
+<footer>
+  <p>七龍珠の戰鬥聖典 · 內容僅供資訊參考與教育用途</p>
+  <p style="margin-top:6px">DRAGON BALL © 1984 by BIRD STUDIO / SHUEISHA · 鳥山明（Akira Toriyama）原作</p>
+</footer>
+</body>
+</html>
